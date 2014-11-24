@@ -78,18 +78,3 @@ export PATH="/Users/ant/gopath/bin:/usr/local/Cellar/go/1.2.2/libexec/bin:/usr/l
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-
-export GOROOT=$(go env GOROOT)
-source ~/gopath/bin/activate
-function gs() {
-  git status
-}
-function gpush() {
-  git push $@
-}
-function gpush() {
-  git push $@
-}
-function gpush() {
-  git pull $@
-}

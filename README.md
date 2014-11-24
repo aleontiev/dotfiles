@@ -5,6 +5,6 @@ Managed with homesick:
 
 `gem install homesick`
 
-`homesick clone aleontiev/dotfiles`
+`homesick clone git@github.com:aleontiev/dotfiles.git`
 
-`homesick symlink dotfiles`
+`homesick link`

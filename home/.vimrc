@@ -17,6 +17,7 @@ call vundle#begin()
 " plugins configured here need to be added
 " to dotfiles/.gitmodules if managed with 
 " homesick
+
 Plugin 'gmarik/Vundle.vim'
 Plugin 'Chiel92/vim-autoformat'
 Plugin 'kien/ctrlp.vim'

@@ -7,4 +7,4 @@ Managed with homesick:
 
 `homesick clone aleontiev/dotfiles`
 
-`homesick symlink`
+`homesick symlink dotfiles`

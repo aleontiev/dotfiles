@@ -1,19 +1,19 @@
 [submodule "Vundle.vim"]
   path = home/.vim/bundle/Vundle.vim
-  url = git@github.com/gmarik/Vundle.vim.git
+  url = https://github.com/gmarik/Vundle.vim
 
 [submodule "ctrlp.vim"]
   path = home/.vim/bundle/ctrlp.vim
-  url = git@github.com:kien/ctrlp.vim.git
+  url = https://github.com/kien/ctrlp.vim
 
 [submodule "vim-autoformat"]
   path = home/.vim/bundle/vim-autoformat
-  url = git@github.com/Chiel92/vim-autoformat
+  url = https://github.com/Chiel92/vim-autoformat
 
 [submodule "vim-fugitive"]
   path = home/.vim/bundle/vim-fugitive
-  url = git@github.com/tpope/vim-fugitive 
+  url = https://github.com/tpope/vim-fugitive 
 
 [submodule "oh-my-zsh"]
   path = home/.oh-my-zsh
-  url = git@github.com:robbyrussell/oh-my-zsh.git
+  url = https://github.com/robbyrussell/oh-my-zsh

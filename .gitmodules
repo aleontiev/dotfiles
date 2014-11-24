@@ -1,0 +1,15 @@
+[submodule "Vundle.vim"]
+    path = home/.vim/bundle/Vundle.vim
+    url = https://github.com/gmarik/Vundle.vim
+
+[submodule "ctrlp.vim"]
+    path = home/.vim/bundle/ctrlp.vim
+    url = https://github.com/kien/ctrlp.vim
+
+[submodule "vim-autoformat"]
+    path = home/.vim/bundle/vim-autoformat
+    url = https://github.com/Chiel92/vim-autoformat
+
+[submodule "vim-fugitive"]
+    path = home/.vim/bundle/vim-fugitive
+    url = https://github.com/tpope/vim-fugitive 

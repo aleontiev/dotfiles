@@ -2,13 +2,13 @@ dotfiles
 ========
 Managed with homesick:
 
-`gem install homesick`
+```
+gem install homesick
+homesick clone git@github.com:aleontiev/dotfiles.git
+homesick link
+```
 
-`homesick clone git@github.com:aleontiev/dotfiles.git`
-
-`homesick link`
-
-Includes custom plugins and aliases for zsh, vim, and git.
+Includes custom plugins and aliases for zsh (oh-my-zsh), vim (Vundle), and git.
 
 Custom Aliases
 ==============

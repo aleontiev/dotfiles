@@ -79,6 +79,4 @@ export PATH="/Users/ant/gopath/bin:/usr/local/Cellar/go/1.2.2/libexec/bin:/usr/l
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-source $HOME/.zsh-fuzzy-match/fuzzy-match.zsh
-
 alias hs="homesick"

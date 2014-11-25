@@ -119,7 +119,7 @@ alias ggrrm="ggr remove"
 
 # zsh
 alias zup="source ~/.zshrc"
-alias zedit="vim ~/.zshrc"
+alias zed="vim ~/.zshrc"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 source ~/.startup.zsh

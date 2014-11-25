@@ -1,3 +1,3 @@
 # homesick pull && homesick link 
-hspull && hslink
+hspull && hsl
 echo "dotfiles reloaded"

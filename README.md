@@ -9,12 +9,11 @@ Managed with homesick:
 
 `homesick link`
 
-Custom Configuration
-====================
+Custom Aliases
+==============
 ```
 
 # homesick/dotfiles
-DOT="$HOME/.homesick/repos/dotfiles"
 alias hs="homesick"
 alias hss="hs status"
 alias hsc="hs commit"
@@ -49,10 +48,23 @@ alias ggrrm="ggr remove"
 alias zup="source ~/.zshrc"
 alias zed="vim ~/.zshrc"
 
-# fuzzy shell
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-# startup script (load/install system dependencies)
-source ~/.startup.zsh
-
 ```
+
+Keyboard Shortcuts
+==================
+
+#Zsh
+
+`<CTRL+T>`: fuzzy file search rooted at current directory
+`<CTRL+R>`: fuzzy history search 
+
+#Vim
+
+`,n`: next file
+`,p`: prev file
+`,w`: write
+`,q`: quit
+`,wq`: write and quit
+`,f`: format
+`,gs`: git status
+`,gd`: git diff

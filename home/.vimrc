@@ -71,6 +71,8 @@ nmap <leader>q :q!<cr>
 nmap <leader>gs :Gstatus<cr>
 " git diff
 nmap <leader>gd :Gdiff<cr>
+nmap <leader>n :next<cr>
+nmap <leader>p :prev<cr>
 
 " Display
 

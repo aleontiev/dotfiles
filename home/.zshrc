@@ -51,7 +51,8 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-export PATH="/Users/ant/gopath/bin:/usr/local/bin:/usr/local/sbin:/usr/local/bin:/bin:/usr/sbin:/sbin:/usr/bin:/opt/X11/bin:/Users/ant/bin:/Users/ant/code/utils"
+
+export PATH="$HOME/gopath/bin:/usr/local/bin:/usr/local/sbin:/usr/local/bin:/bin:/usr/sbin:/sbin:/usr/bin:/opt/X11/bin:$HOME/bin:$HOME/bin"
 
 # export MANPATH="/usr/local/man:$MANPATH"
 

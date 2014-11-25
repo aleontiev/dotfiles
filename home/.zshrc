@@ -45,7 +45,7 @@ ZSH_THEME="gallois"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git cp nyan copyfile copydir)
+plugins=(cp)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -99,10 +99,23 @@ alias ggs="git status"
 alias ggd="git diff --color"
 alias ggc="git commit"
 alias gga="git add"
-alias ggca="gga -A && ggc -av"
-alias ggup="ggca && git push"
-alias ggco="git checkout"
-alias ggb="git checkout -b"
+alias ggrm="git remove"
+alias ggm="git merge"
+alias ggp="git push"
+alias ggf="git fetch"
+alias ggl="git log"
+alias ggco="git checkout"     
+alias ggpl="git pull"
+
+alias ggca="gga -A && ggc -av" # commit all
+alias ggup="ggca && ggp"       # commit and push all
+
+alias ggb="ggco -b"            # new branch
+
+alias ggr="git remote"
+alias ggrv="ggr -v"
+alias ggra="ggr add"
+alias ggrrm="ggr remove"
 
 # zsh
 alias zup="source ~/.zshrc"

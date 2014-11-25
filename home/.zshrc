@@ -94,6 +94,16 @@ alias hsed="hs exec dotfiles"
 alias hsd="hs diff"
 alias hsl="hs link"
 
+# git
+alias ggs="git status"
+alias ggd="git diff --color"
+alias ggc="git commit"
+alias gga="git add"
+alias ggca="gga -A && ggc -av"
+alias ggup="ggca && git push"
+alias ggco="git checkout"
+alias ggb="git checkout -b"
+
 # zsh
 alias zup="source ~/.zshrc"
 alias zedit="vim ~/.zshrc"

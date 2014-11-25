@@ -9,19 +9,19 @@ Managed with homesick:
 
 `homesick link`
 
-Custom configuration:
-
+Custom Configuration
+====================
 ```
+
 # homesick/dotfiles
 DOT="$HOME/.homesick/repos/dotfiles"
 alias hs="homesick"
 alias hss="hs status"
 alias hsc="hs commit"
-alias hspush="hs push"
-alias hspull="hs pull"
+alias hsp="hs push"
+alias hspl="hs pull"
 alias hsa="(cd $DOT; git add -A;)" 
-alias hsup="hsa && hsc && hspush"
-alias hsed="hs exec dotfiles"
+alias hsup="hsa && hsc && hsp"
 alias hsd="hs diff"
 alias hsl="hs link"
 
@@ -37,12 +37,9 @@ alias ggf="git fetch"
 alias ggl="git log"
 alias ggco="git checkout"     
 alias ggpl="git pull origin $(current_branch)"
-
 alias ggca="gga -A && ggc -av" # commit all
-alias ggup="ggca && ggp"       # commit and push all
-
-alias ggb="ggco -b"            # new branch
-
+alias ggup="ggca && ggp"       # commit all and push
+alias ggb="ggco -b"            
 alias ggr="git remote"
 alias ggrv="ggr -v"
 alias ggra="ggr add"
@@ -52,7 +49,10 @@ alias ggrrm="ggr remove"
 alias zup="source ~/.zshrc"
 alias zed="vim ~/.zshrc"
 
+# fuzzy shell
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# startup script (load/install system dependencies)
 source ~/.startup.zsh
 
 ```

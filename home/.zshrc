@@ -118,8 +118,8 @@ alias ggrrm="ggr remove"
 alias zup="source ~/.zshrc"
 alias zed="vim ~/.zshrc"
 
-# fuzzy shell
+# fuzzy shell plugin
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# custom startup script (load/install system dependencies)
+# startup script (load/install system dependencies)
 source ~/.startup.zsh

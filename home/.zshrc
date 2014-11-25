@@ -101,11 +101,11 @@ alias ggc="git commit"
 alias gga="git add"
 alias ggrm="git remove"
 alias ggm="git merge"
-alias ggp="git push"
+alias ggp="git push origin $(current_branch)"
 alias ggf="git fetch"
 alias ggl="git log"
 alias ggco="git checkout"     
-alias ggpl="git pull"
+alias ggpl="git pull origin $(current_branch)"
 
 alias ggca="gga -A && ggc -av" # commit all
 alias ggup="ggca && ggp"       # commit and push all

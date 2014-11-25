@@ -17,3 +17,7 @@
 [submodule "oh-my-zsh"]
   path = home/.oh-my-zsh
   url = git@github.com:robbyrussell/oh-my-zsh.git
+
+[submodule "zsh-fuzzy-match"]
+  path = home/.zsh-fuzzy-match
+  url = git@github.com:tarruda/zsh-fuzzy-match.git

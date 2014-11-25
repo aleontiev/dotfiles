@@ -2,9 +2,9 @@
   path = home/.vim/bundle/Vundle.vim
   url = git@github.com:gmarik/Vundle.vim.git
 
-[submodule "ctrlp.vim"]
-  path = home/.vim/bundle/ctrlp.vim
-  url = git@github.com:kien/ctrlp.vim.git
+[submodule "command-t"]
+  path = home/.vim/bundle/command-t
+  url = git@github.com:wincent/command-t.git
 
 [submodule "vim-autoformat"]
   path = home/.vim/bundle/vim-autoformat

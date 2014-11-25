@@ -20,7 +20,7 @@ call vundle#begin()
 
 Plugin 'gmarik/Vundle.vim'
 Plugin 'Chiel92/vim-autoformat'
-Plugin 'kien/ctrlp.vim'
+Plugin 'wincent/command-t'
 Plugin 'tpope/vim-fugitive'
 
 call vundle#end()

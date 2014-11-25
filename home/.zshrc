@@ -99,4 +99,4 @@ alias zup="source ~/.zshrc"
 alias zedit="vim ~/.zshrc"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-hsed ~/.startup.zsh
+source ~/.startup.zsh

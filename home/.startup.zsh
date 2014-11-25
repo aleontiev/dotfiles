@@ -1,1 +1,2 @@
-hspull
+# homesick pull && homesick link 
+hspull && hsl

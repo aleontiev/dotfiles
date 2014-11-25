@@ -59,24 +59,21 @@ Keyboard Shortcuts
 
 ##Zsh
 
-`<CTRL+T>`: fuzzy file search rooted at current directory
-
-`<CTRL+R>`: fuzzy history search 
+```
+<CTRL+T>: fuzzy file search rooted at current directory
+<CTRL+R>: fuzzy history search 
+```
 
 ##Vim
 
-`,n`: next file
-
-`,p`: prev file
-
-`,w`: write
-
-`,q`: quit
-
-`,wq`: write and quit
-
-`,f`: format
-
-`,gs`: git status
-
-`,gd`: git diff
+```
+,t: file search
+,n: next file
+,p: prev file
+,w: write
+,q: quit
+,wq: write and quit
+,f: format
+,gs: git status
+,gd: git diff
+```

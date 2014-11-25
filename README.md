@@ -2,18 +2,20 @@ dotfiles
 ========
 Managed with homesick:
 
-
 `gem install homesick`
 
 `homesick clone git@github.com:aleontiev/dotfiles.git`
 
 `homesick link`
 
+Includes custom plugins and aliases for zsh, vim, and git.
+
 Custom Aliases
 ==============
 ```
 
 # homesick/dotfiles
+
 alias hs="homesick"
 alias hss="hs status"
 alias hsc="hs commit"
@@ -25,6 +27,7 @@ alias hsd="hs diff"
 alias hsl="hs link"
 
 # git
+
 alias ggs="git status"
 alias ggd="git diff --color"
 alias ggc="git commit"
@@ -45,6 +48,7 @@ alias ggra="ggr add"
 alias ggrrm="ggr remove"
 
 # zsh
+
 alias zup="source ~/.zshrc"
 alias zed="vim ~/.zshrc"
 

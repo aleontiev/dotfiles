@@ -53,18 +53,26 @@ alias zed="vim ~/.zshrc"
 Keyboard Shortcuts
 ==================
 
-#Zsh
+##Zsh
 
 `<CTRL+T>`: fuzzy file search rooted at current directory
+
 `<CTRL+R>`: fuzzy history search 
 
-#Vim
+##Vim
 
 `,n`: next file
+
 `,p`: prev file
+
 `,w`: write
+
 `,q`: quit
+
 `,wq`: write and quit
+
 `,f`: format
+
 `,gs`: git status
+
 `,gd`: git diff

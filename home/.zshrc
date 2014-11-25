@@ -81,18 +81,21 @@ export PATH="/Users/ant/gopath/bin:/usr/local/Cellar/go/1.2.2/libexec/bin:/usr/l
 
 # custom
 
+DOT='.homesick/repos/dotfiles'
+
 alias hs="homesick"
 alias hss="hs status"
 alias hsc="hs commit"
-alias hspush="hs push dotfiles"
-alias hspull="hs pull "
+alias hspush="hs push"
+alias hspull="hs pull"
 alias hsup="hsc && hspush"
-alias hse="hs exec"
+alias hsed="hs exec dotfiles"
 alias hsd="hs diff"
 alias hsl="hs link"
+alias hsa="_D=pwd; cd $DOT; git add; cd $_D;" 
 
 alias zup="source ~/.zshrc"
 alias zedit="vim ~/.zshrc"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-hse ~/.homesick/repos/dotfiles/home/.startup.zsh
+hsed ~/.startup.zsh

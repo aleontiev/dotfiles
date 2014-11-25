@@ -81,8 +81,8 @@ export PATH="/Users/ant/gopath/bin:/usr/local/Cellar/go/1.2.2/libexec/bin:/usr/l
 
 # custom
 
+# homesick/dotfiles
 DOT="~/.homesick/repos/dotfiles"
-
 alias hs="homesick"
 alias hss="hs status"
 alias hsc="hs commit"
@@ -94,6 +94,7 @@ alias hsed="hs exec dotfiles"
 alias hsd="hs diff"
 alias hsl="hs link"
 
+# zsh
 alias zup="source ~/.zshrc"
 alias zedit="vim ~/.zshrc"
 

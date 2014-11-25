@@ -119,6 +119,9 @@ alias ggrrm="ggr remove"
 alias zup="source ~/.zshrc"
 alias zed="vim ~/.zshrc"
 
+# vim
+alias ved="vim ~/.vimrc"
+
 # fuzzy shell plugin
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 

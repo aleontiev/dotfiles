@@ -24,7 +24,7 @@ alias hsa="(cd $DOT; git add -A;)"
 alias hsup="hsa && hsc && hspush"
 alias hsed="hs exec dotfiles"
 alias hsd="hs diff"
-alias hsl="hs link"```
+alias hsl="hs link"
 
 # zsh
 alias zup="source ~/.zshrc"

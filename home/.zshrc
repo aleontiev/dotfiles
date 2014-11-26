@@ -86,41 +86,42 @@ alias hsl="hs link"
 
 # git
 
-# working
+# working (gg*)
 alias ggs="git status"
 alias ggd="git diff --color"
 alias ggc="git commit"
 alias gga="git add"
+alias ggcav="ggc -av"
+alias ggaa="git add -A"
+alias ggca="ggaa && ggcav"   # commit all
 alias ggrm="git remove"
-# merging
 alias ggm="git merge"
-# pullung
+# pullung (ggpl*, ggf, ggdown)
 alias ggf="git fetch"
 alias ggpl="git pull"
 alias ggplc='ggpl origin $(current_branch)'
 alias ggdown="ggf && ggplc"      # fetch all and pull
-# pushing
+# pushing (ggpu*, ggup, ggca)
 alias ggpu="git push"
 alias ggpuc='ggpu origin $(current_branch)' # push 
-alias ggca="gga -A && ggc -av"   # commit all
 alias ggup="ggca && ggpuc"       # commit all and push 
-# branching
-alias ggco="git checkout"       # switch branches
-alias ggn="ggco -b"             # new branch          
+# branching (ggb*)
 alias ggb="git branch"            
+alias ggbc="git checkout"       # switch branches
+alias ggbn="ggbc -b"             # new branch          
 alias ggbd="ggb -D"             # delete branch
 alias ggbl="ggb -l"             # list local branches
 alias ggba="ggb -a"             # list all branches
-# log
+function ggbrm () {              # remove branch
+ ggbd $1 && ggpuc :$1 # remote locally and from master
+}
+# logging (ggl*)
 alias ggl="git log"
-# remotes
+# remotes (ggr*)
 alias ggr="git remote"
 alias ggrv="ggr -v"              # list remote details
 alias ggra="ggr add"             # add remote
 alias ggrrm="ggr remove"         # remove remote
-function ggbrm () {              # remove branch
- ggbd $1 && ggpuc :$1 # remote locally and from master
-}
 
 # vim
 alias v="vim"

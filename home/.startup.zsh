@@ -1,7 +1,1 @@
-echo "               "
-echo "          ,--.!,"
-echo "       __/   -*-"
-echo "     ,d08b.  '|\`"
-echo "     0088MM    " 
-echo "     \`9MMP'    " 
-echo "               "
+echo "ant shell loaded"

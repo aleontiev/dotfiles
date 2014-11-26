@@ -69,9 +69,8 @@ export PATH="$HOME/gopath/bin:/usr/local/bin:/usr/local/sbin:/usr/local/bin:/bin
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 
-EDITOR='vim'
+# homesick
 
-# homesick/dotfiles
 DOT="$HOME/.homesick/repos/dotfiles"
 alias hs="homesick"
 alias hss="hs status"
@@ -86,7 +85,7 @@ alias hsl="hs link"
 
 # git
 
-# working (gg*)
+## working (gg*)
 alias ggs="git status"
 alias ggd="git diff --color"
 alias ggc="git commit"
@@ -96,16 +95,17 @@ alias ggaa="git add -A"
 alias ggca="ggaa && ggcav"   # commit all
 alias ggrm="git remove"
 alias ggm="git merge"
-# pullung (ggpl*, ggf, ggdown)
+alias ggrs="git reset --hard"
+## pulling (ggpl*, ggf, ggdown)
 alias ggf="git fetch"
 alias ggpl="git pull"
 alias ggplc='ggpl origin $(current_branch)'
 alias ggdown="ggf && ggplc"      # fetch all and pull
-# pushing (ggpu*, ggup, ggca)
+## pushing (ggpu*, ggup, ggca)
 alias ggpu="git push"
 alias ggpuc='ggpu origin $(current_branch)' # push 
 alias ggup="ggca && ggpuc"       # commit all and push 
-# branching (ggb*)
+## branching (ggb*)
 alias ggb="git branch"            
 alias ggbc="git checkout"       # switch branches
 alias ggbn="ggbc -b"             # new branch          
@@ -114,15 +114,16 @@ alias ggba="ggb -a"             # list all branches
 function ggbrm () {              # remove branch
  ggbd $1 && ggpuc :$1 # remote locally and from master
 }
-# logging (ggl*)
+## logging (ggl*)
 alias ggl="git log"
-# remotes (ggr*)
+## remotes (ggr*)
 alias ggr="git remote"
 alias ggrv="ggr -v"              # list remote details
 alias ggra="ggr add"             # add remote
 alias ggrrm="ggr remove"         # remove remote
 
 # vim
+EDITOR='vim'
 alias v="vim"
 alias ved="v ~/.vimrc"
 alias emacs="v"
@@ -134,15 +135,14 @@ alias mate="v"
 alias s="source"
 alias zup="s ~/.zshrc"
 alias zed="v ~/.zshrc"
-# jump
+## jump
 alias j="jump"
-
-# fuzzy shell plugin
+## fuzzy shell plugin
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # go
 s ~/gopath/bin/activate
 export GOROOT=$(go env GOROOT)
 
-# startup script (load/install system dependencies)
+# startup 
 source ~/.startup.zsh

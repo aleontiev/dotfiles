@@ -90,7 +90,7 @@ done
 
 if [[ `which fasd` == *"not found"* ]] 
 then
-  deps()
+  deps
 fi
 
 # fasd

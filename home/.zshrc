@@ -126,6 +126,9 @@ alias ggrrm="ggr remove"         # remove remote
 alias v="vim"
 alias ved="v ~/.vimrc"
 alias emacs="v"
+alias nano="v"
+alias pico="v"
+alias mate="v"
 
 # zsh
 alias s="source"

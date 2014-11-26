@@ -119,7 +119,6 @@ alias zed="vim ~/.zshrc"
 # vim
 alias ved="vim ~/.vimrc"
 alias v="vim"
-alias vims="vim"
 
 # fuzzy shell plugin
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

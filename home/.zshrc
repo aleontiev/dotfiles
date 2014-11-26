@@ -85,35 +85,41 @@ alias hsd="hs diff"
 alias hsl="hs link"
 
 # git
+
+# working
 alias ggs="git status"
 alias ggd="git diff --color"
 alias ggc="git commit"
 alias gga="git add"
 alias ggrm="git remove"
+# merging
 alias ggm="git merge"
-alias ggpu="git push"
-alias ggpl="git pull"
+# pullung
 alias ggf="git fetch"
+alias ggpl="git pull"
+alias ggplc='ggpl origin $(current_branch)'
+alias ggdown="ggf && ggplc"      # fetch all and pull
+# pushing
+alias ggpu="git push"
+alias ggpuc='ggpu origin $(current_branch)' # push 
+alias ggca="gga -A && ggc -av"   # commit all
+alias ggup="ggca && ggpuc"       # commit all and push 
+# branching
+alias ggco="git checkout"       # switch branches
+alias ggn="ggco -b"             # new branch          
+alias ggb="git branch"            
+alias ggbd="ggb -D"             # delete branch
+alias ggbl="ggb -l"             # list local branches
+alias ggba="ggb -a"             # list all branches
+# log
 alias ggl="git log"
-alias ggco="git checkout"     
+# remotes
 alias ggr="git remote"
-alias ggbr="git branch"
-
-alias ggp='ggpu origin $(current_branch)'
-alias ggpl='gll origin $(current_branch)'
-alias ggbrd="ggbr -D"
-alias ggbrl="ggbr -l"
-alias ggbra="ggbr -a"
-alias ggca="gga -A && ggc -av" # commit all
-alias ggup="ggca && ggp"       # commit all and push
-alias ggdown="ggf && ggpl"
-alias ggb="ggco -b"            
-alias ggrv="ggr -v"
-alias ggra="ggr add"
-alias ggrrm="ggr remove"
-alias ggpo="git push origin"
-function ggRM () {
- ggbd $1 && ggpo :$1 # remote locally and from master
+alias ggrv="ggr -v"              # list remote details
+alias ggra="ggr add"             # add remote
+alias ggrrm="ggr remove"         # remove remote
+function ggbrm () {              # remove branch
+ ggbd $1 && ggpuc :$1 # remote locally and from master
 }
 
 # vim
@@ -129,5 +135,6 @@ alias zed="v ~/.zshrc"
 # fuzzy shell plugin
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+# A
 # startup script (load/install system dependencies)
 source ~/.startup.zsh

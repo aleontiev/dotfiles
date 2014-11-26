@@ -58,7 +58,6 @@ export PATH="$HOME/gopath/bin:/usr/local/bin:/usr/local/sbin:/usr/local/bin:/bin
 # setup dependencies
 
 function deps() {
-
 if [[ `uname -s` == "Darwin" ]]
 then
   BREW_INSTALLED=`which brew`
@@ -78,7 +77,7 @@ fi
 
 for data in `cat $HOME/.dependencies`
 do
-  INSTALLED="$CHECKER $data"
+  INSTALLED="$CHECKER $data 2>&1"
 
   if [[ `eval $INSTALLED` == *"$CHECK"* ]]
   then
@@ -87,7 +86,6 @@ do
     echo "$data is already installed."
   fi
 done
-
 }
 
 # fasd
@@ -136,7 +134,7 @@ alias ggbn="ggbc -b"             # new branch
 alias ggbd="ggb -D"             # delete branch
 alias ggba="ggb -a"             # list all branches
 function ggbrm () {              # remove branch
- ggbd $1 && ggpuc :$1 # remote locally and from master
+ggbd $1 && ggpuc :$1 # remote locally and from master
 }
 ## logging (ggl*)
 alias ggl="git log"

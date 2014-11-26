@@ -81,12 +81,17 @@ do
 
   if [[ `eval $INSTALLED` == *"$CHECK"* ]]
   then
-    $INSTALLER install $data
+    eval "$INSTALLER install $data"
   else
     echo "$data is already installed."
   fi
 done
 }
+
+if [[ `which fasd` == *"not found"* ]] 
+then
+  deps()
+fi
 
 # fasd
 eval "$(fasd --init posix-alias zsh-hook)"

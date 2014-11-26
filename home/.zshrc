@@ -132,6 +132,8 @@ alias emacs="v"
 alias s="source"
 alias zup="s ~/.zshrc"
 alias zed="v ~/.zshrc"
+# jump
+alias j="jump"
 
 # fuzzy shell plugin
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

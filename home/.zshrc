@@ -90,11 +90,18 @@ alias ggc="git commit"
 alias gga="git add"
 alias ggrm="git remove"
 alias ggm="git merge"
-alias ggp="git push origin $(current_branch)"
+function ggp() {
+  git push origin $(current_branch)
+}
 alias ggf="git fetch"
 alias ggl="git log"
 alias ggco="git checkout"     
-alias ggpl="git pull origin $(current_branch)"
+function ggpl() {
+  git pull origin $(current_branch)
+}
+alias ggbd="git branch -d"
+alias ggbl="git branch -l"
+alias ggba="git branch -a"
 alias ggca="gga -A && ggc -av" # commit all
 alias ggup="ggca && ggp"       # commit all and push
 alias ggb="ggco -b"            

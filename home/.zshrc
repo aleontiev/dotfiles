@@ -55,6 +55,41 @@ source $ZSH/oh-my-zsh.sh
 
 export PATH="$HOME/gopath/bin:/usr/local/bin:/usr/local/sbin:/usr/local/bin:/bin:/usr/sbin:/sbin:/usr/bin:/opt/X11/bin:$HOME/bin:$HOME/bin"
 
+# setup dependencies
+
+function deps() {
+
+if [[ `uname -s` == "Darwin" ]]
+then
+  BREW_INSTALLED=`which brew`
+  if [[ "$BREW_INSTALLED" == *"not found"* ]]
+  then
+    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  fi
+  INSTALLER=`which brew`
+  INSTALLER="$INSTALLER"
+  CHECKER="$INSTALLER info"
+  CHECK='Not installed'
+else
+  INSTALLER='sudo apt-get'
+  CHECKER='dpkg -s'
+  CHECK='not installed'
+fi
+
+for data in `cat $HOME/.dependencies`
+do
+  INSTALLED="$CHECKER $data"
+
+  if [[ `eval $INSTALLED` == *"$CHECK"* ]]
+  then
+    $INSTALLER install $data
+  else
+    echo "$data is already installed."
+  fi
+done
+
+}
+
 # fasd
 eval "$(fasd --init posix-alias zsh-hook)"
 
@@ -135,5 +170,6 @@ export GOROOT=$(go env GOROOT)
 # inspiration
 alias inspire='head -$((${RANDOM} % `wc -l < ~/.inspiration` + 1)) ~/.inspiration | tail -1'
 
-# startup 
-source ~/.startup.zsh
+inspire
+
+

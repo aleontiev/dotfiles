@@ -5,7 +5,6 @@ gettext
 git
 go
 heroku-toolbelt
-homesick
 postgresql
 s3cmd
 stow

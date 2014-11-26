@@ -130,5 +130,8 @@ alias j="jump"
 s ~/gopath/bin/activate
 export GOROOT=$(go env GOROOT)
 
+# inspiration
+alias inspire='head -$((${RANDOM} % `wc -l < ~/.inspiration` + 1)) ~/.inspiration | tail -1'
+
 # startup 
 source ~/.startup.zsh

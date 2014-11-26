@@ -91,19 +91,23 @@ alias ggc="git commit"
 alias gga="git add"
 alias ggrm="git remove"
 alias ggm="git merge"
-alias ggp='git push origin $(current_branch)'
+alias ggpu="git push"
+alias ggpl="git pull"
 alias ggf="git fetch"
 alias ggl="git log"
 alias ggco="git checkout"     
-alias ggpl='git pull origin $(current_branch)'
-alias ggbd="git branch -D"
-alias ggbl="git branch -l"
-alias ggba="git branch -a"
+alias ggr="git remote"
+alias ggbr="git branch"
+
+alias ggp='ggpu origin $(current_branch)'
+alias ggpl='gll origin $(current_branch)'
+alias ggbrd="ggbr -D"
+alias ggbrl="ggbr -l"
+alias ggbra="ggbr -a"
 alias ggca="gga -A && ggc -av" # commit all
 alias ggup="ggca && ggp"       # commit all and push
 alias ggdown="ggf && ggpl"
 alias ggb="ggco -b"            
-alias ggr="git remote"
 alias ggrv="ggr -v"
 alias ggra="ggr add"
 alias ggrrm="ggr remove"
@@ -112,13 +116,15 @@ function ggRM () {
  ggbd $1 && ggpo :$1 # remote locally and from master
 }
 
-# zsh
-alias zup="source ~/.zshrc"
-alias zed="vim ~/.zshrc"
-
 # vim
-alias ved="vim ~/.vimrc"
 alias v="vim"
+alias ved="v ~/.vimrc"
+alias emacs="v"
+
+# zsh
+alias s="source"
+alias zup="s ~/.zshrc"
+alias zed="v ~/.zshrc"
 
 # fuzzy shell plugin
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

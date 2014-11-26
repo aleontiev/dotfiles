@@ -57,7 +57,7 @@ export PATH="$HOME/gopath/bin:/usr/local/bin:/usr/local/sbin:/usr/local/bin:/bin
 
 # homesick
 
-DOT="$HOME/.homesick/repos/dotfiles"
+export DOT="$HOME/.homesick/repos/dotfiles"
 alias hs="homesick"
 alias hss="hs status"
 alias hsc="hs commit"

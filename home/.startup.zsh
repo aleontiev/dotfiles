@@ -1,1 +1,7 @@
-echo "type hsp && hsl to reload dotfiles"
+echo "C"
+echo " (\.  \      ,/)"
+echo "  \(  |\     )/"
+echo "  //\ | \   /\\"
+echo "(/ /\_#oo#_/\ \)"
+echo " \/\  ####  /\/"
+echo "      \`##'"

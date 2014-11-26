@@ -151,12 +151,11 @@ alias ggrrm="ggr remove"         # remove remote
 
 # vim
 EDITOR='vim'
-alias v="vim"
-alias ved="v ~/.vimrc"
-alias emacs="v"
-alias nano="v"
-alias pico="v"
-alias mate="v"
+alias ved="vim ~/.vimrc"
+alias emacs="vim"
+alias nano="vim"
+alias pico="vim"
+alias mate="vim"
 
 # zsh
 alias s="source"

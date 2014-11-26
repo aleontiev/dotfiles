@@ -110,7 +110,6 @@ alias ggb="git branch"
 alias ggbc="git checkout"       # switch branches
 alias ggbn="ggbc -b"             # new branch          
 alias ggbd="ggb -D"             # delete branch
-alias ggbl="ggb -l"             # list local branches
 alias ggba="ggb -a"             # list all branches
 function ggbrm () {              # remove branch
  ggbd $1 && ggpuc :$1 # remote locally and from master
@@ -138,6 +137,9 @@ alias j="jump"
 # fuzzy shell plugin
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# A
+# go
+s ~/gopath/bin/activate
+export GOROOT=$(go env GOROOT)
+
 # startup script (load/install system dependencies)
 source ~/.startup.zsh

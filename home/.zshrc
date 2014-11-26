@@ -90,16 +90,12 @@ alias ggc="git commit"
 alias gga="git add"
 alias ggrm="git remove"
 alias ggm="git merge"
-function ggp() {
-  git push origin $(current_branch)
-}
+alias ggp='git push origin $(current_branch)'
 alias ggf="git fetch"
 alias ggl="git log"
 alias ggco="git checkout"     
-function ggpl() {
-  git pull origin $(current_branch)
-}
-alias ggbd="git branch -d"
+alias ggpl='git pull origin $(current_branch)'
+alias ggbd="git branch -D"
 alias ggbl="git branch -l"
 alias ggba="git branch -a"
 alias ggca="gga -A && ggc -av" # commit all
@@ -109,6 +105,10 @@ alias ggr="git remote"
 alias ggrv="ggr -v"
 alias ggra="ggr add"
 alias ggrrm="ggr remove"
+alias ggpo="git push origin"
+function ggRM () {
+ ggbd $1 && ggpo :$1 # remote locally and from master
+}
 
 # zsh
 alias zup="source ~/.zshrc"

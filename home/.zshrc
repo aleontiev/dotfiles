@@ -47,7 +47,7 @@ ZSH_THEME="gallois"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 
-plugins=(cp git)
+plugins=(cp git jump)
 
 source $ZSH/oh-my-zsh.sh
 

@@ -1,1 +1,1 @@
-echo "If you're going through hell, keep going."
+head -$((${RANDOM} % `wc -l < ~/.inspiration` + 1)) ~/.inspiration | tail -1

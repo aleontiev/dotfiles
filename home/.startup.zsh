@@ -1,2 +1,1 @@
-homesick pull && homesick link
-echo "dotfiles reloaded"
+echo "type hsp && hsl to reload dotfiles"

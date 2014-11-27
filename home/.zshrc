@@ -151,16 +151,17 @@ alias ggrrm="ggr remove"         # remove remote
 
 # vim
 EDITOR='vim'
+alias v='f -e vim' # quick opening files with vim
 alias ved="vim ~/.vimrc"
-alias emacs="vim"
-alias nano="vim"
-alias pico="vim"
-alias mate="vim"
+alias emacs="v"
+alias nano="v"
+alias pico="v"
+alias mate="v"
 
 # zsh
 alias s="source"
 alias zup="s ~/.zshrc"
-alias zed="v ~/.zshrc"
+alias zed="vim ~/.zshrc"
 
 ## fuzzy shell plugin
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

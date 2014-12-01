@@ -93,7 +93,7 @@ syntax on
 
 " python 
 let g:formatprg_python = 'autopep8'
-let g:formatprg_args_expr_python = '"- --max-line-length 90 --indent-size 2'
+let g:formatprg_args_expr_python = '- --max-line-length 90 --indent-size 2'
 let python_highlight_all=1
 
 " go 

@@ -38,6 +38,7 @@ colorscheme molokai
 
 " Indentation
 
+set backspace=2
 set noeol " no EOL at EOF
 set smartindent
 set smarttab
@@ -92,7 +93,7 @@ syntax on
 
 " python 
 let g:formatprg_python = 'autopep8'
-let g:formatprg_args_expr_python = '"- --max-line-length 90 --indent-size ".&shiftwidth'
+let g:formatprg_args_expr_python = '"- --max-line-length 90 --indent-size 2'
 let python_highlight_all=1
 
 " go 

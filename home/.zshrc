@@ -133,9 +133,9 @@ alias ggpu="git push"
 alias ggpuc='ggpu origin $(current_branch)' # push 
 alias ggup="ggca && ggpuc"       # commit all and push 
 ## branching (ggb*)
+alias ggco="git checkout"
 alias ggb="git branch"            
-alias ggbc="git checkout"       # switch branches
-alias ggbn="ggbc -b"             # new branch          
+alias ggbn="ggco -b"             # new branch          
 alias ggbd="ggb -D"             # delete branch
 alias ggba="ggb -a"             # list all branches
 function ggbrm () {              # remove branch

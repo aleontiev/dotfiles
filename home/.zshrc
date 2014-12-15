@@ -51,6 +51,9 @@ plugins=(cp git jump)
 
 source $ZSH/oh-my-zsh.sh
 
+HISTSIZE=2000
+SAVEHIST=2000
+
 # User configuration
 
 export PATH="$HOME/gopath/bin:/usr/local/bin:/usr/local/sbin:/usr/local/bin:/bin:/usr/sbin:/sbin:/usr/bin:/opt/X11/bin:$HOME/bin:$HOME/bin"

@@ -51,8 +51,8 @@ plugins=(cp git jump)
 
 source $ZSH/oh-my-zsh.sh
 
-HISTSIZE=2000
-SAVEHIST=2000
+HISTSIZE=10000
+SAVEHIST=10000
 
 # User configuration
 

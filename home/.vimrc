@@ -80,6 +80,9 @@ nmap <leader>p :prev<cr>
 set ruler
 set number
 
+" Paste 
+set viminfo-=<50,s10 
+
 " Search
 
 set ic " ignore case in search
@@ -99,3 +102,4 @@ let python_highlight_all=1
 " go 
 let g:formatprg_go = 'gofmt'
 let g:formatprg_args_go = ''
+

@@ -162,8 +162,7 @@ alias pico="v"
 alias mate="v"
 
 # zsh
-alias s="source"
-alias zup="s ~/.zshrc"
+alias zup="source ~/.zshrc"
 alias zed="vim ~/.zshrc"
 
 ## fuzzy shell plugin

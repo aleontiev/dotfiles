@@ -56,6 +56,9 @@ set ai "Auto indent
 set si "Smart indent
 set wrap "Wrap lines
 
+set splitbelow
+set splitright
+
 " Hotkeys
 
 let mapleader = ";"
@@ -69,10 +72,14 @@ nmap <leader>e :e
 nmap <leader>. :e .<cr>
 " format
 nmap <leader>f :Autoformat<cr>
-" split/switch tabs
-nmap <leader>s :vsp .<cr>
-nmap <leader>a <C-w><left>
-nmap <leader>d <C-w><right>
+" split/switch 
+nmap <leader>v :vsp .<cr>
+nmap <leader>s :sp .<cr>
+nmap <leader>r <C-w>R
+nmap <leader>h <C-w><C-h>
+nmap <leader>j <C-w><C-j>
+nmap <leader>k <C-w><C-k>
+nmap <leader>l <C-w><C-l>
 " force quit
 nmap <leader>q :q!<cr>
 " git 

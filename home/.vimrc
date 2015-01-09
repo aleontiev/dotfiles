@@ -64,7 +64,7 @@ set splitright
 let mapleader = ";"
 let g:mapleader = ";"
 " write
-nmap <leader>w :w!<cr>
+nmap <leader>w :w<cr>
 " write and exit
 nmap <leader>wq :wq!<cr>
 " edit

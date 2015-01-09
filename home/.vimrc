@@ -16,7 +16,7 @@ call vundle#begin()
 
 " plugins configured here need to be added
 " to dotfiles/.gitmodules if managed with 
-" homesick
+" homesick 
 
 Plugin 'gmarik/Vundle.vim'
 Plugin 'Chiel92/vim-autoformat'
@@ -65,6 +65,7 @@ nmap <leader>w :w!<cr>
 " write and exit
 nmap <leader>wq :wq!<cr>
 " edit
+nmap <leader>e :e 
 nmap <leader>. :e .<cr>
 " format
 nmap <leader>f :Autoformat<cr>
@@ -72,12 +73,12 @@ nmap <leader>f :Autoformat<cr>
 nmap <leader>s :vsp .<cr>
 nmap <leader>a <C-w><left>
 nmap <leader>d <C-w><right>
-" force exit
+" force quit
 nmap <leader>q :q!<cr>
-" git status
+" git 
 nmap <leader>gs :Gstatus<cr>
-" git diff
 nmap <leader>gd :Gdiff<cr>
+" switch between buffers
 nmap <leader>n :next<cr>
 nmap <leader>p :prev<cr>
 

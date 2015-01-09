@@ -58,14 +58,20 @@ set wrap "Wrap lines
 
 " Hotkeys
 
-let mapleader = ","
-let g:mapleader = ","
+let mapleader = ";"
+let g:mapleader = ";"
 " write
 nmap <leader>w :w!<cr>
 " write and exit
 nmap <leader>wq :wq!<cr>
+" edit
+nmap <leader>. :e .<cr>
 " format
 nmap <leader>f :Autoformat<cr>
+" split/switch tabs
+nmap <leader>s :vsp .<cr>
+nmap <leader>a <C-w><left>
+nmap <leader>d <C-w><right>
 " force exit
 nmap <leader>q :q!<cr>
 " git status

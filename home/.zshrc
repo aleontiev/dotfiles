@@ -169,7 +169,7 @@ alias zed="vim ~/.zshrc"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # go
-s ~/gopath/bin/activate
+source ~/gopath/bin/activate
 export GOROOT=$(go env GOROOT)
 
 # inspiration

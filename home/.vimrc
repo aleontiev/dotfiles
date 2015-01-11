@@ -59,6 +59,15 @@ set wrap "Wrap lines
 set splitbelow
 set splitright
 
+" Remap movement to JKLI
+" and h/H -> insert
+nmap j <left>
+nmap k <down>
+nmap l <right>
+nmap i <up>
+nnoremap H I
+nnoremap h i
+
 " Hotkeys
 
 let mapleader = ";"
@@ -76,9 +85,9 @@ nmap <leader>f :Autoformat<cr>
 nmap <leader>v :vsp .<cr>
 nmap <leader>s :sp .<cr>
 nmap <leader>r <C-w>R
-nmap <leader>h <C-w><C-h>
-nmap <leader>j <C-w><C-j>
-nmap <leader>k <C-w><C-k>
+nmap <leader>j <C-w><C-h>
+nmap <leader>k <C-w><C-j>
+nmap <leader>i <C-w><C-k>
 nmap <leader>l <C-w><C-l>
 " force quit
 nmap <leader>q :q!<cr>

@@ -65,6 +65,10 @@ nmap j <left>
 nmap k <down>
 nmap l <right>
 nmap i <up>
+vmap j <left>
+vmap k <down>
+vmap l <right>
+vmap i <up>
 nnoremap H I
 nnoremap h i
 

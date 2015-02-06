@@ -3,14 +3,14 @@
 "
 filetype plugin indent off
 set runtimepath+=$GOROOT/misc/vim
-filetype plugin indent on
+"filetype plugin indent on
 
 "
 " Vundle packages
 "
 
 set nocompatible
-filetype off
+" filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
@@ -24,7 +24,7 @@ Plugin 'wincent/command-t'
 Plugin 'tpope/vim-fugitive'
 
 call vundle#end()
-filetype plugin indent on
+"filetype plugin indent on
 
 "
 " Settings

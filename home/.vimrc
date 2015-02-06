@@ -40,6 +40,7 @@ colorscheme molokai
 
 set backspace=2
 set noeol " no EOL at EOF
+set autoindent
 set smartindent
 set smarttab
 set expandtab
@@ -49,11 +50,10 @@ set lbr
 set tw=500
 
 set tabstop=2
+set softtabstop=2
 set shiftwidth=2
 set expandtab
 
-set ai "Auto indent
-set si "Smart indent
 set wrap "Wrap lines
 
 set splitbelow

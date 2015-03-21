@@ -22,6 +22,7 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'Chiel92/vim-autoformat'
 Plugin 'wincent/command-t'
 Plugin 'tpope/vim-fugitive'
+Plugin 'fatih/vim-go'
 
 call vundle#end()
 "filetype plugin indent on

@@ -23,6 +23,7 @@ Plugin 'Chiel92/vim-autoformat'
 Plugin 'wincent/command-t'
 Plugin 'tpope/vim-fugitive'
 Plugin 'fatih/vim-go'
+Plugin 'nvie/vim-flake8'
 
 call vundle#end()
 "filetype plugin indent on
@@ -50,9 +51,9 @@ set autoread
 set lbr
 set tw=500
 
-set tabstop=2
-set softtabstop=2
-set shiftwidth=2
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
 set expandtab
 
 set wrap "Wrap lines
@@ -86,6 +87,7 @@ nmap <leader>e :e
 nmap <leader>. :e .<cr>
 " format
 nmap <leader>f :Autoformat<cr>
+nmap <leader>c :call flake8#Flake8()<cr>
 " split/switch 
 nmap <leader>v :vsp .<cr>
 nmap <leader>s :sp .<cr>
@@ -124,7 +126,7 @@ syntax on
 
 " python 
 let g:formatprg_python = 'autopep8'
-let g:formatprg_args_python = '- --max-line-length 90 --indent-size 2'
+let g:formatprg_args_python = '- --experimental -a'
 let python_highlight_all=1
 
 " go 

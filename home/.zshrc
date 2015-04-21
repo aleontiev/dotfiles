@@ -179,3 +179,19 @@ inspire
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
+function heroku-account() {
+    if [ -z "$@" ] 
+    then
+        cat ~/.netrc | grep login | uniq
+    else
+        NETRC="$HOME/.netrc.$@"
+        if [ -f "$NETRC" ] 
+        then
+            cp $HOME/.netrc{.$@,}
+            cat ~/.netrc | grep login | uniq
+        else
+            echo "Cannot find ~/.netrc.$@!"
+        fi
+    fi
+}

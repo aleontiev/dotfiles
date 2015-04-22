@@ -12,17 +12,26 @@ function heroku-current() {
 function heroku-login() {
     if [ -f "$NETRC" ]
     then
-        rm $NETRC
+        mv $NETRC $NETRC.bak
     fi
     heroku login
-    NAME=$1
-    if [ -z "$NAME" ]
+    if [ $? -eq 0 ]
     then
-        cp $NETRC $NETRC.$USER
+        rm -f $NETRC.bak
+        NAME=$1
+        if [ -z "$NAME" ]
+        then
+            cp $NETRC $NETRC.$USER
+        else
+            cp $NETRC $NETRC.$NAME
+        fi
+        heroku-current
     else
-        cp $NETRC $NETRC.$NAME
+        if [ -f "$NETRC.bak" ]
+        then
+            mv $NETRC.bak $NETRC
+        fi
     fi
-    heroku-current
 }
 
 function heroku-switch() {

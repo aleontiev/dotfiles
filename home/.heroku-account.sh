@@ -3,9 +3,9 @@ export NETRC="$HOME/.netrc"
 function heroku-current() {
     if [ -f "$NETRC" ]
     then
-        echo "Current user:" $(cat $NETRC | grep login | uniq | sed -E s/login// | xargs)
+        cat $NETRC | grep login | uniq | sed -E s/login// | xargs
     else
-        echo "Could not find $NETRC, try running 'heroku-account login'"
+        echo ""
     fi
 }
 
@@ -25,7 +25,7 @@ function heroku-login() {
         else
             cp $NETRC $NETRC.$NAME
         fi
-        heroku-current
+        heroku-list
     else
         if [ -f "$NETRC.bak" ]
         then
@@ -39,7 +39,7 @@ function heroku-switch() {
     if [ -f "$TO_NETRC" ] 
     then
         cp $TO_NETRC $NETRC
-        heroku-current
+        heroku-list
     else
         echo "Cannot find $TO_NETRC, try running 'heroku-account login $1'"
     fi
@@ -53,9 +53,16 @@ function heroku-list() {
         then
             echo "Could not find anything like $NETRC.*, try running 'heroku-account login'"
         else
-            SHORT_NAME=$(echo $f | sed s#$PREFIX## | xargs)
-            LOGIN_NAME=$(cat $f | grep login | uniq | sed -E s/login// | xargs)
-            echo $SHORT_NAME ":" $LOGIN_NAME
+            NAME=$(echo $f | sed s#$PREFIX## | xargs)
+            LOGIN=$(cat $f | grep login | uniq | sed -E s/login// | xargs)
+            CURRENT=$(heroku-current)
+            if [ "$CURRENT" == "$LOGIN" ]
+            then
+                IS_CURRENT="[*]"
+            else
+                IS_CURRENT=""
+            fi
+            echo $IS_CURRENT $NAME ":" $LOGIN
         fi
     done
 }
@@ -63,18 +70,13 @@ function heroku-list() {
 function heroku-account() {
     if [ -z "$1" ] 
     then
-        heroku-current
+        heroku-list
     else
         if [ "$1" = "login" ]
         then
             heroku-login $2
         else
-            if [ "$1" = "list" ]
-            then
-                heroku-list
-            else
-                heroku-switch $1
-            fi
+            heroku-switch $1
         fi
     fi
 }

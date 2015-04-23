@@ -78,3 +78,5 @@ function heroku-account() {
         fi
     fi
 }
+
+alias ha=heroku-account

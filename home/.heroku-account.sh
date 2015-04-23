@@ -65,15 +65,15 @@ function heroku-account() {
     then
         heroku-current
     else
-        if [ "$1" == "login" ]
+        if [ "$1" = "login" ]
         then
             heroku-login $2
         else
-            if [ "$1" == "list" ]
+            if [ "$1" = "list" ]
             then
                 heroku-list
             else
-                heroku-switch "$1"
+                heroku-switch $1
             fi
         fi
     fi

@@ -56,7 +56,7 @@ function heroku-list() {
             NAME=$(echo $f | sed s#$PREFIX## | xargs)
             LOGIN=$(cat $f | grep login | uniq | sed -E s/login// | xargs)
             CURRENT=$(heroku-current)
-            if [ "$CURRENT" == "$LOGIN" ]
+            if [[ "$CURRENT" == "$LOGIN" ]]
             then
                 IS_CURRENT="[*]"
             else

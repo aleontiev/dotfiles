@@ -1,3 +1,7 @@
+# inspiration
+alias inspire='head -$((${RANDOM} % `wc -l < ~/.inspiration` + 1)) ~/.inspiration | tail -1'
+inspire
+
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
@@ -171,11 +175,6 @@ alias zed="vim ~/.zshrc"
 # go
 source ~/gopath/bin/activate
 export GOROOT=$(go env GOROOT)
-
-# inspiration
-alias inspire='head -$((${RANDOM} % `wc -l < ~/.inspiration` + 1)) ~/.inspiration | tail -1'
-
-inspire
 
 export NVM_DIR="$HOME/.nvm"
 

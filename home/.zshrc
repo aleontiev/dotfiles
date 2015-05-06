@@ -178,6 +178,12 @@ alias inspire='head -$((${RANDOM} % `wc -l < ~/.inspiration` + 1)) ~/.inspiratio
 inspire
 
 export NVM_DIR="$HOME/.nvm"
+
+if [[ ! -d "$NVM_DIR" ]] 
+then
+    wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.25.1/install.sh | bash
+fi
+
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
 # heroku

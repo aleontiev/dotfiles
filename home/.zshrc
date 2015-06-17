@@ -127,6 +127,7 @@ alias ggrm="git remove"
 alias ggm="git merge"
 alias ggrs="git reset --hard"
 ## pulling (ggpl*, ggf, ggdown)
+alias ggt="git tag -f"
 alias ggf="git fetch"
 alias ggpl="git pull"
 alias ggplc='ggpl origin $(current_branch)'

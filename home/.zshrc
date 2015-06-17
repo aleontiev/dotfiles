@@ -1,3 +1,7 @@
+# inspiration
+alias inspire='head -$((${RANDOM} % `wc -l < ~/.inspiration` + 1)) ~/.inspiration | tail -1'
+inspire
+
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
@@ -173,12 +177,13 @@ alias zed="vim ~/.zshrc"
 source ~/gopath/bin/activate
 export GOROOT=$(go env GOROOT)
 
-# inspiration
-alias inspire='head -$((${RANDOM} % `wc -l < ~/.inspiration` + 1)) ~/.inspiration | tail -1'
-
-inspire
-
 export NVM_DIR="$HOME/.nvm"
+
+if [[ ! -d "$NVM_DIR" ]] 
+then
+    wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.25.1/install.sh | bash
+fi
+
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
 # heroku

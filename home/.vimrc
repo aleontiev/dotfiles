@@ -24,6 +24,7 @@ Plugin 'wincent/command-t'
 Plugin 'tpope/vim-fugitive'
 Plugin 'fatih/vim-go'
 Plugin 'nvie/vim-flake8'
+Plugin 'editorconfig/editorconfig-vim'
 
 call vundle#end()
 "filetype plugin indent on

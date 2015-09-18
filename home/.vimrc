@@ -25,6 +25,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'fatih/vim-go'
 Plugin 'nvie/vim-flake8'
 Plugin 'editorconfig/editorconfig-vim'
+Plugin 'christoomey/vim-sort-motion'
 
 call vundle#end()
 "filetype plugin indent on
@@ -82,10 +83,9 @@ let g:mapleader = ";"
 " write
 nmap <leader>w :w<cr>
 " write and exit
-nmap <leader>wq :wq!<cr>
 " edit
-nmap <leader>e :e 
-nmap <leader>. :e .<cr>
+nmap <leader>o :e .<cr> 
+nmap <leader>O :e<cr>
 " format
 nmap <leader>f :Autoformat<cr>
 nmap <leader>c :call flake8#Flake8()<cr>
@@ -99,12 +99,14 @@ nmap <leader>i <C-w><C-k>
 nmap <leader>l <C-w><C-l>
 " force quit
 nmap <leader>q :q!<cr>
-" git 
-nmap <leader>gs :Gstatus<cr>
-nmap <leader>gd :Gdiff<cr>
 " switch between buffers
 nmap <leader>n :next<cr>
 nmap <leader>p :prev<cr>
+
+nmap <leader>t :tabe<cr>
+nmap <leader>T :tabe
+nmap <leader>. :tabn<cr>
+nmap <leader>, :tabp<cr>
 
 " Display
 

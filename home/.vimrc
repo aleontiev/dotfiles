@@ -18,6 +18,7 @@ call vundle#begin()
 " to dotfiles/.gitmodules if managed with 
 " homesick 
 
+Plugin 'christoomey/vim-sort-motion'
 Plugin 'gmarik/Vundle.vim'
 Plugin 'Chiel92/vim-autoformat'
 Plugin 'wincent/command-t'

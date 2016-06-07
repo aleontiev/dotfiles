@@ -205,3 +205,6 @@ TIMEFMT='%J   %U  user %S system %P cpu %*E total'$'\n'\
 'max memory:                %M KB'$'\n'\
 'page faults from disk:     %F'$'\n'\
 'other page faults:         %R'
+
+# docker
+eval "$(docker-machine env default)"

@@ -61,7 +61,7 @@ SAVEHIST=10000
 # User configuration
 
 ANDROID_HOME="/Users/ant/Library/Android/sdk"
-export PATH="$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$HOME/gopath/bin:/usr/local/bin:/usr/local/sbin:/usr/local/bin:/bin:/usr/sbin:/sbin:/usr/bin:/opt/X11/bin:$HOME/bin:$HOME/bin"
+export PATH="$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$HOME/gopath/bin:/usr/local/bin:/usr/local/sbin:/usr/local/bin:/bin:/usr/sbin:/sbin:/usr/bin:/opt/X11/bin:$HOME/bin:$HOME/bin:$HOME/.local/bin"
 
 # setup dependencies
 
@@ -194,9 +194,11 @@ fi
 source ~/.heroku-account.sh
 
 # pyenv
+
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
+command -v pyenv > /dev/null 2>&1 && eval "$(pyenv init -)"
+command -v pyenv-virtualenv-init > /dev/null 2>&1 && eval "$(pyenv virtualenv-init -)"
 
 TIMEFMT='%J   %U  user %S system %P cpu %*E total'$'\n'\
 'avg shared (code):         %X KB'$'\n'\

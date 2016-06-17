@@ -51,7 +51,7 @@ ZSH_THEME="agnoster"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 
-plugins=(cp jump)
+plugins=(cp jump git)
 
 source $ZSH/oh-my-zsh.sh
 

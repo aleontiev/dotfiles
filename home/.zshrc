@@ -210,3 +210,6 @@ TIMEFMT='%J   %U  user %S system %P cpu %*E total'$'\n'\
 
 # docker
 eval "$(docker-machine env default)"
+
+# kubernetes
+alias kz="kubez"

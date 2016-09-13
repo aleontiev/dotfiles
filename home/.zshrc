@@ -213,6 +213,11 @@ eval "$(docker-machine env default)" 2>&1 >/dev/null
 
 # kubernetes
 alias kz="kubez"
+alias kc="kubectl"
 
+# tmux
 alias tmux="tmux -2"
-if [ "$TMUX" = "" ]; then tmux; fi
+alias ted="vim ~/.tmux.conf"
+
+tmux new -s default 2>1 >/dev/null
+if [ "$TMUX" = "" ]; then tmux attach -t default; fi

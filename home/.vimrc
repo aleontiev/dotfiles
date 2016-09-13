@@ -90,9 +90,9 @@ nmap <leader>O :e<cr>
 nmap <leader>f :Autoformat<cr>
 nmap <leader>c :call flake8#Flake8()<cr>
 " split/switch 
-nmap <leader>v :vsp .<cr>
-nmap <leader>s :sp .<cr>
-nmap <leader>r <C-w>R
+nmap <leader>\ :vsp .<cr>
+nmap <leader>- :sp .<cr>
+nmap <leader>% <C-w>R
 nmap <leader>j <C-w><C-h>
 nmap <leader>k <C-w><C-j>
 nmap <leader>i <C-w><C-k>

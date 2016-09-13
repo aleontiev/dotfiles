@@ -209,7 +209,10 @@ TIMEFMT='%J   %U  user %S system %P cpu %*E total'$'\n'\
 'other page faults:         %R'
 
 # docker
-eval "$(docker-machine env default)"
+eval "$(docker-machine env default)" 2>&1 >/dev/null
 
 # kubernetes
 alias kz="kubez"
+
+alias tmux="tmux -2"
+if [ "$TMUX" = "" ]; then tmux; fi

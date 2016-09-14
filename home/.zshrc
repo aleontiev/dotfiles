@@ -85,7 +85,7 @@ fi
 
 for data in `cat $HOME/.dependencies`
 do
-  INSTALLED="$CHECKER $data 2>&1"
+  INSTALLED="$CHECKER $data 2>1"
 
   if [[ `eval $INSTALLED` == *"$CHECK"* ]]
   then
@@ -209,15 +209,16 @@ TIMEFMT='%J   %U  user %S system %P cpu %*E total'$'\n'\
 'other page faults:         %R'
 
 # docker
-eval "$(docker-machine env default)" 2>&1 >/dev/null
+eval "$(docker-machine env default 2>/dev/null)"
 
 # kubernetes
 alias kz="kubez"
 alias kc="kubectl"
 
 # tmux
-alias tmux="tmux -2"
 alias ted="vim ~/.tmux.conf"
 
 tmux new -s default 2>1 >/dev/null
-if [ "$TMUX" = "" ]; then tmux attach -t default; fi
+if [ "$TMUX" = "" ]; then tmux -2 attach -t default; fi
+
+alias beam="gotty tmux -2 attach &; ngrok http 8080"

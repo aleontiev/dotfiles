@@ -73,6 +73,18 @@ vmap j <left>
 vmap k <down>
 vmap l <right>
 vmap i <up>
+
+augroup netrw_dvorak_fix
+    autocmd!
+    autocmd filetype netrw call Fix_netrw_maps_for_dvorak()
+augroup END
+function! Fix_netrw_maps_for_dvorak()
+    noremap <buffer> j <left>
+    noremap <buffer> k <down>
+    noremap <buffer> i <up>
+    noremap <buffer> l <right>
+endfunction
+
 nnoremap H I
 nnoremap h i
 

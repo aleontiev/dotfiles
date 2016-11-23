@@ -85,7 +85,7 @@ fi
 
 for data in `cat $HOME/.dependencies`
 do
-  INSTALLED="$CHECKER $data 2>&1 1>/dev/null"
+  INSTALLED="$CHECKER $data >/dev/null 2>&1"
 
   if [[ `eval $INSTALLED` == *"$CHECK"* ]]
   then
@@ -218,7 +218,7 @@ alias kc="kubectl"
 # tmux
 alias ted="vim ~/.tmux.conf"
 
-tmux new -s default 2>&1 >/dev/null
+tmux new -s default 2>/dev/null
 if [ "$TMUX" = "" ]; then tmux -2 attach -t default; fi
 
 alias beam="gotty tmux -2 attach &; ngrok http 8080"

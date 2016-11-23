@@ -42,6 +42,7 @@ colorscheme molokai
 
 " Indentation
 
+set clipboard=unnamed
 set backspace=2
 set noeol " no EOL at EOF
 set autoindent

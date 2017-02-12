@@ -17,7 +17,7 @@ call vundle#begin()
 " plugins configured here need to be added
 " to dotfiles/.gitmodules if managed with 
 " homesick 
-
+Plugin 'https://github.com/vim-syntastic/syntastic.git'
 Plugin 'gmarik/Vundle.vim'
 Plugin 'Chiel92/vim-autoformat'
 Plugin 'wincent/command-t'
@@ -99,9 +99,6 @@ nmap <leader>w :w<cr>
 " edit
 nmap <leader>o :e .<cr> 
 nmap <leader>O :e<cr>
-" format
-nmap <leader>f :Autoformat<cr>
-nmap <leader>c :call flake8#Flake8()<cr>
 " split/switch 
 nmap <leader>\ :vsp .<cr>
 nmap <leader>- :sp .<cr>
@@ -148,4 +145,23 @@ let python_highlight_all=1
 " go 
 let g:formatprg_go = 'gofmt'
 let g:formatprg_args_go = ''
+
+" syntastic
+let g:syntastic_python_checkers = ['flake8']
+let g:syntastic_javascript_checks = ['eslint']
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 0
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 0
+let g:syntastic_check_on_wq = 0
+let g:syntastic_debug = 0
+
+
+" format
+nmap <leader>f :Autoformat<cr>
+nmap <leader>c :call SyntasticCheck()<cr>
 

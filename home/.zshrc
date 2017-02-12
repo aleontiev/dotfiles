@@ -176,7 +176,6 @@ alias zed="vim ~/.zshrc"
 
 # go
 source ~/gopath/bin/activate
-export GOROOT=$(go env GOROOT)
 
 export NVM_DIR="$HOME/.nvm"
 

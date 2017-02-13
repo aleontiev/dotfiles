@@ -148,7 +148,7 @@ let g:formatprg_args_go = ''
 
 " syntastic
 let g:syntastic_python_checkers = ['flake8']
-let g:syntastic_javascript_checks = ['eslint']
+let g:syntastic_javascript_checkers = ['eslint']
 
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}

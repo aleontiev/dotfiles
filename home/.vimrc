@@ -156,6 +156,7 @@ set statusline+=%*
 
 let g:syntastic_always_populate_loc_list = 0
 let g:syntastic_auto_loc_list = 1
+let g:syntastic_auto_loc = 1
 let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
 let g:syntastic_debug = 0
@@ -165,3 +166,6 @@ let g:syntastic_debug = 0
 nmap <leader>f :Autoformat<cr>
 nmap <leader>c :call SyntasticCheck()<cr>
 
+" swap files
+set directory=~/.vim/_tmp//
+set backupdir=~/.vim/_backup//

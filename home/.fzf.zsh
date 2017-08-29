@@ -16,5 +16,5 @@ fi
 
 # Key bindings
 # ------------
-source "/Users/ant/.fzf/shell/key-bindings.zsh"
+# source "/Users/ant/.fzf/shell/key-bindings.zsh"
 

@@ -192,12 +192,28 @@ fi
 # heroku
 source ~/.heroku-account.sh
 
-function hpup() {
-    git push https://git.heroku.com/$1.git master:master   
+function hkc() {
+    if [[ -z "$2" ]]
+    then
+        heroku config -a $1
+    else
+        heroku config:get $2 -a $1
+    fi
 }
-function hpupx() {
-    heroku repo:purge_cache -a $1 && hpup $1
+alias hkl="heroku logs -a "
+function hkup() {
+    if [[ -z "$1" ]]
+    then
+        APP=`basename $(pwd)`
+    else
+        APP=$1
+    fi
+    git push https://git.heroku.com/$APP.git master:master   
 }
+function hkupx() {
+    heroku repo:purge_cache -a $1 && hkup $1
+}
+
 # pyenv
 
 export PYENV_ROOT="$HOME/.pyenv"

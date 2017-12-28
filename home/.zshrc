@@ -211,7 +211,13 @@ function hkup() {
     git push https://git.heroku.com/$APP.git master:master   
 }
 function hkupx() {
-    heroku repo:purge_cache -a $1 && hkup $1
+    if [[ -z "$1" ]]
+    then
+        APP=`basename $(pwd)`
+    else
+        APP=$1
+    fi
+    heroku repo:purge_cache -a $APP && hkup $APP
 }
 
 # pyenv

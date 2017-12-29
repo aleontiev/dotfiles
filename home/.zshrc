@@ -60,7 +60,7 @@ SAVEHIST=10000
 
 # User configuration
 
-ANDROID_HOME="/Users/ant/Library/Android/sdk"
+ANDROID_HOME="$HOME/Library/Android/sdk"
 export PATH="$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$HOME/gopath/bin:/usr/local/bin:/usr/local/sbin:/usr/local/bin:/bin:/usr/sbin:/sbin:/usr/bin:/opt/X11/bin:$HOME/bin:$HOME/bin:$HOME/.local/bin"
 
 # setup dependencies
@@ -221,3 +221,5 @@ tmux new -s default 2>/dev/null
 if [ "$TMUX" = "" ]; then tmux -2 attach -t default; fi
 
 alias beam="gotty tmux -2 attach &; ngrok http 8080"
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"

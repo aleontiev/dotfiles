@@ -1,20 +1,14 @@
 # Setup fzf
 # ---------
-if [[ ! "$PATH" == */Users/ant/.fzf/bin* ]]; then
-  export PATH="$PATH:/Users/ant/.fzf/bin"
-fi
-
-# Man path
-# --------
-if [[ ! "$MANPATH" == */Users/ant/.fzf/man* && -d "/Users/ant/.fzf/man" ]]; then
-  export MANPATH="$MANPATH:/Users/ant/.fzf/man"
+if [[ ! "$PATH" == */usr/local/opt/fzf/bin* ]]; then
+  export PATH="$PATH:/usr/local/opt/fzf/bin"
 fi
 
 # Auto-completion
 # ---------------
-[[ $- == *i* ]] && source "/Users/ant/.fzf/shell/completion.zsh" 2> /dev/null
+[[ $- == *i* ]] && source "/usr/local/opt/fzf/shell/completion.zsh" 2> /dev/null
 
 # Key bindings
 # ------------
-# source "/Users/ant/.fzf/shell/key-bindings.zsh"
+source "/usr/local/opt/fzf/shell/key-bindings.zsh"
 

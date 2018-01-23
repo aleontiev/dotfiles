@@ -12,6 +12,7 @@ set runtimepath+=$GOROOT/misc/vim
 set nocompatible
 " filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
+set rtp+=/usr/local/opt/fzf
 call vundle#begin()
 
 " plugins configured here need to be added

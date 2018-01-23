@@ -2,7 +2,7 @@
 	email = alonetiev@gmail.com
 	name = aleontiev
 [core]
-	editor = /usr/bin/vim
+	editor = vim
 [push]
 	default = simple
 [url "git@github.com:"]

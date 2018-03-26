@@ -174,9 +174,6 @@ alias zed="vim ~/.zshrc"
 ## fuzzy shell plugin
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# go
-source ~/gopath/bin/activate
-
 export NVM_DIR="$HOME/.nvm"
 
 if [[ ! -d "$NVM_DIR" ]] 

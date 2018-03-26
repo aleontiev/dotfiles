@@ -168,5 +168,5 @@ nmap <leader>f :Autoformat<cr>
 nmap <leader>c :call SyntasticCheck()<cr>
 
 " swap files
-set directory=~/.vim/_tmp//
-set backupdir=~/.vim/_backup//
+set directory=~/.vim/_tmp/
+set backupdir=~/.vim/_backup/

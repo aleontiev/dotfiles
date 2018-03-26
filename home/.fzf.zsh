@@ -11,3 +11,4 @@ fi
 # Key bindings
 # ------------
 source "/home/ant/.fzf/shell/key-bindings.zsh"
+

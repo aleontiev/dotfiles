@@ -189,13 +189,25 @@ fi
 # heroku
 source ~/.heroku-account.sh
 
-function hkc() {
-    if [[ -z "$2" ]]
+alias hk=heroku
+function hke() {
+    if [[ -z "$1" ]]
     then
-        heroku config -a $1
+        APP=`basename $(pwd)`
     else
-        heroku config:get $2 -a $1
+        APP=$1
     fi
+    heroku config -s -a $APP
+}
+function hks() {
+    if [[ -z "$1" ]]
+    then
+        APP=`basename $(pwd)`
+    else
+        APP=$1
+    fi
+    echo "* Serving app with $APP config"
+    hke | tr '\n' ' ' | xargs -i -I% env % dj serve
 }
 alias hkl="heroku logs -a "
 function hkup() {
@@ -256,3 +268,4 @@ export LS_COLORS
 #    eval `dircolors ~/.dir_colors`
 # fi
 cd $HOME
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

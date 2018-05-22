@@ -61,7 +61,8 @@ SAVEHIST=10000
 # User configuration
 
 ANDROID_HOME="$HOME/Library/Android/sdk"
-export PATH="$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$HOME/gopath/bin:/usr/local/bin:/usr/local/sbin:/usr/local/bin:/bin:/usr/sbin:/sbin:/usr/bin:/opt/X11/bin:$HOME/bin:$HOME/bin:$HOME/.local/bin"
+JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0_161.jdk/Contents/Home"
+export PATH="$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$HOME/gopath/bin:/usr/local/bin:/usr/local/sbin:/usr/local/bin:/bin:/usr/sbin:/sbin:/usr/bin:/opt/X11/bin:$HOME/bin:$HOME/bin:$HOME/.local/bin:$HOME/platform-tools"
 
 # setup dependencies
 

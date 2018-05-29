@@ -139,13 +139,7 @@ syntax on
 " Language
 
 " python 
-let g:formatprg_python = 'autopep8'
-let g:formatprg_args_python = '- --experimental -a'
 let python_highlight_all=1
-
-" go 
-let g:formatprg_go = 'gofmt'
-let g:formatprg_args_go = ''
 
 " syntastic
 let g:syntastic_python_checkers = ['flake8']
@@ -155,7 +149,7 @@ set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
-let g:syntastic_always_populate_loc_list = 0
+let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_auto_loc = 1
 let g:syntastic_check_on_open = 0

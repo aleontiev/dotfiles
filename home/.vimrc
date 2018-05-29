@@ -9,6 +9,8 @@ set runtimepath+=$GOROOT/misc/vim
 " Vundle packages
 "
 
+set tw=80
+
 set nocompatible
 " filetype off
 set rtp+=~/.vim/bundle/Vundle.vim

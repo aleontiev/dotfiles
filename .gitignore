@@ -1,2 +1,4 @@
 .netrwhist
+home/.vim/_tmp
+home/.vim/_backup
 home/build

@@ -55,7 +55,6 @@ set expandtab
 set autoread
 
 set lbr
-set tw=500
 
 set tabstop=4
 set softtabstop=4

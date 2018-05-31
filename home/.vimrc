@@ -9,7 +9,7 @@ set runtimepath+=$GOROOT/misc/vim
 " Vundle packages
 "
 
-set tw=80
+set tw=120
 
 set nocompatible
 " filetype off

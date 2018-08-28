@@ -151,6 +151,9 @@ alias ggba="ggb -a"             # list all branches
 function ggbrm () {              # remove branch
 ggbd $1 && ggpuc :$1 # remote locally and from master
 }
+function use() {
+    eval $(egrep -v '^\s*#' .env.$1 | xargs) ${@:2}
+}
 ## logging (ggl*)
 alias ggl="git log"
 ## remotes (ggr*)
@@ -198,7 +201,7 @@ function hke() {
     else
         APP=$1
     fi
-    heroku config -s -a $APP
+    heroku config -s -a $APP | egrep "DATABASE|AWS|DJANGO"
 }
 function hks() {
     if [[ -z "$1" ]]
@@ -208,7 +211,7 @@ function hks() {
         APP=$1
     fi
     echo "* Serving app with $APP config"
-    hke | tr '\n' ' ' | xargs -i -I% env % dj serve
+    hke | tr '\n' ' ' | xargs -J % env % dj serve
 }
 alias hkl="heroku logs -a "
 function hkup() {

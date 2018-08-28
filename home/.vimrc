@@ -3,13 +3,12 @@
 "
 filetype plugin indent off
 set runtimepath+=$GOROOT/misc/vim
-"filetype plugin indent on
+filetype plugin indent on
 
 "
 " Vundle packages
 "
 
-set tw=120
 
 set nocompatible
 " filetype off
@@ -29,9 +28,11 @@ Plugin 'fatih/vim-go'
 Plugin 'nvie/vim-flake8'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'christoomey/vim-sort-motion'
+Plugin 'vimwiki/vimwiki'
+Plugin 'vim-airline/vim-airline'
 
 call vundle#end()
-"filetype plugin indent on
+filetype plugin indent on
 
 "
 " Settings
@@ -39,7 +40,6 @@ call vundle#end()
 
 " Theme
 
-syntax enable
 set background=dark
 colorscheme molokai
 
@@ -165,3 +165,5 @@ nmap <leader>c :call SyntasticCheck()<cr>
 " swap files
 set directory=~/.vim/_tmp/
 set backupdir=~/.vim/_backup/
+
+set laststatus=2

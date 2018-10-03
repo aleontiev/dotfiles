@@ -9,7 +9,6 @@ filetype plugin indent on
 " Vundle packages
 "
 
-
 set nocompatible
 " filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -19,7 +18,8 @@ call vundle#begin()
 " plugins configured here need to be added
 " to dotfiles/.gitmodules if managed with 
 " homesick 
-Plugin 'https://github.com/vim-syntastic/syntastic.git'
+"
+" Plugin 'https://github.com/vim-syntastic/syntastic.git'
 Plugin 'gmarik/Vundle.vim'
 Plugin 'Chiel92/vim-autoformat'
 Plugin 'wincent/command-t'
@@ -30,6 +30,9 @@ Plugin 'editorconfig/editorconfig-vim'
 Plugin 'christoomey/vim-sort-motion'
 Plugin 'vimwiki/vimwiki'
 Plugin 'vim-airline/vim-airline'
+Plugin 'scrooloose/nerdtree'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
+Plugin 'w0rp/ale'
 
 call vundle#end()
 filetype plugin indent on
@@ -37,6 +40,8 @@ filetype plugin indent on
 "
 " Settings
 "
+
+let g:airline#extensions#ale#enabled = 1
 
 " Theme
 
@@ -95,6 +100,9 @@ nnoremap h i
 
 let mapleader = ";"
 let g:mapleader = ";"
+
+nmap <leader>en :ALENext<cr>
+nmap <leader>ep :ALEPrevious<cr>
 " write
 nmap <leader>w :w<cr>
 " write and exit
@@ -114,9 +122,9 @@ nmap <leader>q :q!<cr>
 " switch between buffers
 nmap <leader>n :next<cr>
 nmap <leader>p :prev<cr>
-
-nmap <leader>t :tabe<cr>
-nmap <leader>T :tabe
+nmap <leader>d :call NERDTreeToggleInCurDir()<cr>
+nmap <leader>D :NERDTreeFind<cr>
+nmap <leader>T :tabe<cr>
 nmap <leader>. :tabn<cr>
 nmap <leader>, :tabp<cr>
 
@@ -167,3 +175,13 @@ set directory=~/.vim/_tmp/
 set backupdir=~/.vim/_backup/
 
 set laststatus=2
+
+
+function! NERDTreeToggleInCurDir()
+  " If NERDTree is open in the current buffer
+  if (exists("t:NERDTreeBufName") && bufwinnr(t:NERDTreeBufName) != -1)
+    exe ":NERDTreeClose"
+  else
+    exe ":NERDTreeFind"
+  endif
+endfunction

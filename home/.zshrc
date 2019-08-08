@@ -1,8 +1,7 @@
 #
 # Inspiration
 #
-echo "Loading..."
-fortune -o | cowsay
+printf "Loading...\r"
 
 #
 # tmux
@@ -59,34 +58,30 @@ alias hsl="hs link"
 # git
 #
 printf "...git\r"
-alias ggs="git status"
-alias ggd="git diff --color"
-alias ggc="git commit"
-alias gga="git add"
-alias ggcav="ggc -av"
-alias ggaa="git add -A"
-alias ggca="ggaa && ggcav"
-alias ggrm="git remove"
-alias ggm="git merge"
-alias ggrs="git reset --hard"
-alias ggt="git tag -f"
-alias ggf="git fetch"
-alias ggpl="git pull"
-alias ggplc='ggpl origin $(current_branch)'
-alias ggdown="ggf && ggplc"      # fetch all and pull
-alias ggpu="git push"
-alias ggpuc='ggpu origin $(current_branch)' # push 
-alias ggup="ggca && ggpuc"       # commit all and push 
-alias ggco="git checkout"
-alias ggb="git branch"            
-alias ggbn="ggco -b"             # new branch          
-alias ggbd="ggb -D"             # delete branch
-alias ggba="ggb -a"             # list all branches
-alias ggl="git log"
-alias ggr="git remote"
-alias ggrv="ggr -v"              # list remote details
-alias ggra="ggr add"             # add remote
-alias ggrrm="ggr remove"         # remove remote
+alias gs="git status"
+alias gd="git diff --color"
+alias gc="git commit"
+alias ga="git add"
+alias gca="ga -A && git commit -av"
+alias grm="git remove"
+alias gm="git merge"
+alias gf="git fetch"
+alias gpl="git pull"
+alias gplc='gpl origin $(git rev-parse --abbrev-ref HEAD)'
+alias gdown="gf && gplc"      # fetch all and pull
+alias gpu="git push"
+alias gpuc='gpu origin $(git rev-parse --abbrev-ref HEAD)' # push 
+alias gup="gca && gpuc"       # commit all and push 
+alias gco="git checkout"
+alias gb="git branch"            
+alias gbn="gco -b"             # new branch          
+alias gbd="gb -D"             # delete branch
+alias gba="gb -a"             # list all branches
+alias gl="git log"
+alias gr="git remote"
+alias grv="gr -v"              # list remote details
+alias gra="gr add"             # add remote
+alias grrm="gr remove"         # remove remote
 
 #
 # vim
@@ -100,11 +95,6 @@ alias nano="v"
 alias pico="v"
 alias mate="v"
 
-#
-# fzf
-#
-printf "...fzf\r"
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 #
 # nvm
@@ -201,11 +191,12 @@ printf "...oh-my-zsh\r"
 export ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="agnoster"
 DEFAULT_USER="ant"
-plugins=(poetry)
+plugins=(poetry fzf)
+ZSH_DISABLE_COMPFIX=true
 source $ZSH/oh-my-zsh.sh
 
 alias inspire='head -$((${RANDOM} % `wc -l < ~/.inspiration` + 1)) ~/.inspiration | tail -1'
-clear
-inspire | cowthink --random --aurora
+inspire
+fortune -o | cowthink --random --aurora
 
 export PATH="$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$HOME/go/bin:/usr/local/go/bin:$HOME/bin:$HOME/.local/bin:${PATH}"

@@ -19,7 +19,6 @@ call vundle#begin()
 " to dotfiles/.gitmodules if managed with 
 " homesick 
 "
-" Plugin 'https://github.com/vim-syntastic/syntastic.git'
 Plugin 'gmarik/Vundle.vim'
 Plugin 'Chiel92/vim-autoformat'
 Plugin 'wincent/command-t'
@@ -33,6 +32,8 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'w0rp/ale'
+Plugin 'posva/vim-vue'
+
 
 call vundle#end()
 filetype plugin indent on
@@ -40,8 +41,15 @@ filetype plugin indent on
 "
 " Settings
 "
-
+autocmd BufRead,BufNewFile *.vue setlocal filetype=vue.html.javascript.css
+let g:vue_disable_pre_processors=1
 let g:airline#extensions#ale#enabled = 1
+let g:ale_linter_aliases = {'jsx': ['css', 'javascript'], 'vue': ['vue', 'javascript']}
+let g:ale_linters = {'javascript': ['eslint'], 'css': ['eslint'], 'python': ['flake8'], 'vue': ['eslint']}
+let g:ale_fixers = {'javascript': ['eslint'], 'css': ['eslint'], 'python': ['black'], 'vue': ['eslint']}
+let g:ale_python_flake8_executable = 'python3'
+let g:ale_linters_explicit = 1
+let g:airline_powerline_fonts = 1
 
 " Theme
 
@@ -101,6 +109,7 @@ nnoremap h i
 let mapleader = ";"
 let g:mapleader = ";"
 
+nmap <leader>f :ALEFix<cr>
 nmap <leader>en :ALENext<cr>
 nmap <leader>ep :ALEPrevious<cr>
 " write
@@ -150,32 +159,12 @@ syntax on
 " python 
 let python_highlight_all=1
 
-" syntastic
-let g:syntastic_python_checkers = ['flake8']
-let g:syntastic_javascript_checkers = ['eslint']
-
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_auto_loc = 1
-let g:syntastic_check_on_open = 0
-let g:syntastic_check_on_wq = 0
-let g:syntastic_debug = 0
-
-
-" format
-nmap <leader>f :Autoformat<cr>
-nmap <leader>c :call SyntasticCheck()<cr>
 
 " swap files
 set directory=~/.vim/_tmp/
 set backupdir=~/.vim/_backup/
 
 set laststatus=2
-
 
 function! NERDTreeToggleInCurDir()
   " If NERDTree is open in the current buffer

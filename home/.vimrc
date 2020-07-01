@@ -24,7 +24,7 @@ Plugin 'Chiel92/vim-autoformat'
 Plugin 'wincent/command-t'
 Plugin 'tpope/vim-fugitive'
 Plugin 'fatih/vim-go'
-Plugin 'nvie/vim-flake8'
+" Plugin 'nvie/vim-flake8'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'christoomey/vim-sort-motion'
 Plugin 'vimwiki/vimwiki'
@@ -45,9 +45,9 @@ autocmd BufRead,BufNewFile *.vue setlocal filetype=vue.html.javascript.css
 let g:vue_disable_pre_processors=1
 let g:airline#extensions#ale#enabled = 1
 let g:ale_linter_aliases = {'jsx': ['css', 'javascript'], 'vue': ['vue', 'javascript']}
-let g:ale_linters = {'javascript': ['eslint'], 'css': ['eslint'], 'python': ['flake8'], 'vue': ['eslint']}
-let g:ale_fixers = {'javascript': ['eslint'], 'css': ['eslint'], 'python': ['black'], 'vue': ['eslint']}
-let g:ale_python_flake8_executable = 'python3'
+let g:ale_linters = {'javascript': ['prettier', 'eslint'], 'css': ['eslint'], 'python': ['flake8'], 'vue': ['eslint']}
+let g:ale_fixers = {'javascript': ['prettier', 'eslint'], 'css': ['eslint'], 'python': ['black'], 'vue': ['eslint']}
+" let g:ale_python_flake8_executable = 'python3'
 let g:ale_linters_explicit = 1
 let g:airline_powerline_fonts = 1
 

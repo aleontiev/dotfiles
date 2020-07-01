@@ -197,6 +197,6 @@ source $ZSH/oh-my-zsh.sh
 
 alias inspire='head -$((${RANDOM} % `wc -l < ~/.inspiration` + 1)) ~/.inspiration | tail -1'
 inspire
-fortune -o | cowthink --random --aurora
+fortune -o | cowthink -f eyes --aurora
 
 export PATH="$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$HOME/go/bin:/usr/local/go/bin:$HOME/bin:$HOME/.local/bin:${PATH}"

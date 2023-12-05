@@ -6,7 +6,7 @@
 [push]
 	default = simple
 [url "git@github.com:"]
-	insteadOf = https://xgithub.com/
+	insteadOf = https://github.com/
 [github]
 	altschooltoken = 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
     altschooltokenWas = 6567e23879c6d0d9b3eb04703a984d8d92bb9fb7

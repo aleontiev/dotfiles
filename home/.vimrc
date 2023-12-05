@@ -6,37 +6,36 @@ set runtimepath+=$GOROOT/misc/vim
 filetype plugin indent on
 
 "
-" Vundle packages
+" plugins 
 "
 
 set nocompatible
 " filetype off
-set rtp+=~/.vim/bundle/Vundle.vim
 set rtp+=/usr/local/opt/fzf
-call vundle#begin()
+call plug#begin()
 
 " plugins configured here need to be added
 " to dotfiles/.gitmodules if managed with 
 " homesick 
 "
-Plugin 'gmarik/Vundle.vim'
-Plugin 'HerringtonDarkholme/yats'
+Plug 'gmarik/Vundle.vim'
+Plug 'HerringtonDarkholme/yats'
 " Plugin 'Chiel92/vim-autoformat'
 " Plugin 'wincent/command-t'
-Plugin 'tpope/vim-fugitive'
-Plugin 'fatih/vim-go'
+Plug 'tpope/vim-fugitive'
+Plug 'fatih/vim-go'
 " Plugin 'nvie/vim-flake8'
-Plugin 'editorconfig/editorconfig-vim'
-Plugin 'christoomey/vim-sort-motion'
-Plugin 'vimwiki/vimwiki'
-Plugin 'vim-airline/vim-airline'
-Plugin 'scrooloose/nerdtree'
-Plugin 'Xuyuanp/nerdtree-git-plugin'
-Plugin 'posva/vim-vue'
-Plugin 'neoclide/coc.nvim'
+Plug 'editorconfig/editorconfig-vim'
+Plug 'christoomey/vim-sort-motion'
+Plug 'vimwiki/vimwiki'
+Plug 'vim-airline/vim-airline'
+Plug 'scrooloose/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'posva/vim-vue'
+Plug 'neoclide/coc.nvim'
 
 
-call vundle#end()
+call plug#end()
 filetype plugin indent on  " required
 
 "

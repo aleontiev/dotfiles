@@ -1,0 +1,20 @@
+{
+  "python.formatting.provider": "blackd",
+  "coc.preferences.willSaveHandlerTimeout": 1000,
+  "python.linting.enabled": true,
+  "python.formatting.blackdHTTPHeaders": {
+    "X-Fast-Or-Safe": "fast",
+    "X-Diff": 0,
+    "X-Skip-String-Normalization": "yes"
+  },
+  "pyright.disableCompletion": true,
+  "vetur.format.enable": true,
+  "coc.preferences.formatOnSaveFiletypes": [
+    "-javascript",
+    "-json",
+    "-typescript",
+    "-css",
+    "-python",
+    "-markdown"
+  ]
+}

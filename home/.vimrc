@@ -20,8 +20,9 @@ call vundle#begin()
 " homesick 
 "
 Plugin 'gmarik/Vundle.vim'
-Plugin 'Chiel92/vim-autoformat'
-Plugin 'wincent/command-t'
+Plugin 'HerringtonDarkholme/yats'
+" Plugin 'Chiel92/vim-autoformat'
+" Plugin 'wincent/command-t'
 Plugin 'tpope/vim-fugitive'
 Plugin 'fatih/vim-go'
 " Plugin 'nvie/vim-flake8'
@@ -31,24 +32,47 @@ Plugin 'vimwiki/vimwiki'
 Plugin 'vim-airline/vim-airline'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
-Plugin 'w0rp/ale'
 Plugin 'posva/vim-vue'
+Plugin 'neoclide/coc.nvim'
 
 
 call vundle#end()
-filetype plugin indent on
+filetype plugin indent on  " required
 
 "
 " Settings
 "
+"aug python
+"  au!
+"  au BufWrite *.py call CocAction('format')
+"aug END
+
+" coc
+
+set updatetime=200
+autocmd CursorHold * silent call CocActionAsync('highlight')
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ CheckBackspace() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+function! CheckBackspace() abort
+    let col = col('.') - 1
+    return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+if has('nvim')
+    inoremap <silent><expr> <c-space> coc#refresh()
+else
+    inoremap <silent><expr> <c-@> coc#refresh()
+endif
+
 autocmd BufRead,BufNewFile *.vue setlocal filetype=vue.html.javascript.css
+autocmd BufNewFile,BufRead *.ts,*.tsx setlocal filetype=typescript
+
+let g:airline#extensions#hunks#enabled = 0
 let g:vue_disable_pre_processors=1
-let g:airline#extensions#ale#enabled = 1
-let g:ale_linter_aliases = {'jsx': ['css', 'javascript'], 'vue': ['vue', 'javascript']}
-let g:ale_linters = {'javascript': ['prettier', 'eslint'], 'css': ['eslint'], 'python': ['flake8'], 'vue': ['eslint']}
-let g:ale_fixers = {'javascript': ['prettier', 'eslint'], 'css': ['eslint'], 'python': ['black'], 'vue': ['eslint']}
-" let g:ale_python_flake8_executable = 'python3'
-let g:ale_linters_explicit = 1
 let g:airline_powerline_fonts = 1
 
 " Theme
@@ -58,7 +82,7 @@ colorscheme molokai
 
 " Indentation
 
-set clipboard=unnamed
+set clipboard=exclude:.*
 set backspace=2
 set noeol " no EOL at EOF
 set autoindent
@@ -94,6 +118,7 @@ augroup netrw_dvorak_fix
     autocmd!
     autocmd filetype netrw call Fix_netrw_maps_for_dvorak()
 augroup END
+
 function! Fix_netrw_maps_for_dvorak()
     noremap <buffer> j <left>
     noremap <buffer> k <down>
@@ -109,9 +134,8 @@ nnoremap h i
 let mapleader = ";"
 let g:mapleader = ";"
 
-nmap <leader>f :ALEFix<cr>
-nmap <leader>en :ALENext<cr>
-nmap <leader>ep :ALEPrevious<cr>
+nmap <leader>rn <Plug>(coc-rename)
+nmap <leader>f :call CocActionAsync('format')<cr>
 " write
 nmap <leader>w :w<cr>
 " write and exit
@@ -127,6 +151,7 @@ nmap <leader>k <C-w><C-j>
 nmap <leader>i <C-w><C-k>
 nmap <leader>l <C-w><C-l>
 " force quit
+nmap <leader>wq :wq!<cr>
 nmap <leader>q :q!<cr>
 " switch between buffers
 nmap <leader>n :next<cr>
@@ -136,7 +161,6 @@ nmap <leader>D :NERDTreeFind<cr>
 nmap <leader>T :tabe<cr>
 nmap <leader>. :tabn<cr>
 nmap <leader>, :tabp<cr>
-
 " Display
 
 set ruler
@@ -151,8 +175,6 @@ set ic " ignore case in search
 set incsearch " incremental search
 set hlsearch " highlight search results
 set smartcase " ignore case when lowercase
-
-syntax on
 
 " Language
 
@@ -174,3 +196,6 @@ function! NERDTreeToggleInCurDir()
     exe ":NERDTreeFind"
   endif
 endfunction
+
+syntax on
+

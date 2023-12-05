@@ -1,3 +1,4 @@
+
 #
 # Inspiration
 #
@@ -6,6 +7,7 @@ printf "Loading...\r"
 #
 # tmux
 #
+
 printf "...tmux\r"
 alias ted="vim ~/.tmux.conf"
 tmux new -s default 2>/dev/null
@@ -101,26 +103,10 @@ alias mate="v"
 #
 
 printf "...nvm\r"
-nvm() {
-    unset -f nvm
-    export NVM_DIR=~/.nvm
-    [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-    nvm "$@"
-}
- 
-node() {
-    unset -f node
-    export NVM_DIR=~/.nvm
-    [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-    node "$@"
-}
- 
-npm() {
-    unset -f npm
-    export NVM_DIR=~/.nvm
-    [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-    npm "$@"
-}
+
+export PATH="$HOME/.nvm/versions/node/v14.17.0/bin:$PATH"
+export NVM_DIR=~/.nvm
+[[ -s "$NVM_DIR/nvm.sh" ]] && source "$NVM_DIR/nvm.sh" --no-use
 
 #
 # pyenv
@@ -141,6 +127,7 @@ if type pyenv > /dev/null; then
     }
 fi
 
+(&>/dev/null $PYENV_ROOT/versions/3.7.8/bin/blackd &)
 
 #
 # docker
@@ -160,7 +147,7 @@ alias kc="kubectl"
 printf "...utils\r"
 alias beam="gotty tmux -2 attach &; ngrok http 8080"
 function use() {
-    eval $(egrep -v '^\s*#' .env.$1 | xargs) ${@:2}
+    eval $(egrep -v '^\s*#' .env.$1 | xargs -0) ${@:2}
 }
 
 
@@ -174,6 +161,7 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 # ls
 #
 
+
 printf "...ls\r"
 LS_COLORS='no=00;38;5;250:rs=0:di=01;38;5;198:ln=01;38;5;37:mh=00:pi=48;5;230;38;5;136;01:so=48;5;230;38;5;136;01:do=48;5;230;38;5;136;01:bd=48;5;230;38;5;244;01:cd=48;5;230;38;5;244;01:or=48;5;235;38;5;160:su=48;5;160;38;5;230:sg=48;5;136;38;5;230:ca=30;41:tw=48;5;64;38;5;230:ow=48;5;235;38;5;33:st=48;5;33;38;5;230:*.tar=01;31:*.tgz=01;31:*.arj=01;31:*.taz=01;31:*.lzh=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.gz=01;31:ex=01;38;5;82:*.cmd=00;38;5;82:*.exe=00;38;5;82:*.com=00;38;5;82:*.btm=00;38;5;82:*.bat=00;38;5;82:*.jpg=00;38;5;37:*.jpeg=00;38;5;37:*.png=00;38;5;37:*.gif=00;38;5;37:*.bmp=00;38;5;37:*.xbm=00;38;5;37:*.xpm=00;38;5;37:*.tif=00;38;5;37:*.tiff=00;38;5;37:*.pdf=00;38;5;98:*.odf=00;38;5;98:*.doc=00;38;5;98:*.ppt=00;38;5;98:*.pptx=00;38;5;98:*.db=00;38;5;98:*.aac=00;38;5;208:*.au=00;38;5;208:*.flac=00;38;5;208:*.mid=00;38;5;208:*.midi=00;38;5;208:*.mka=00;38;5;208:*.mp3=00;38;5;208:*.mpc=00;38;5;208:*.ogg=00;38;5;208:*.ra=00;38;5;208:*.wav=00;38;5;208:*.m4a=00;38;5;208:*.axa=00;38;5;208:*.oga=00;38;5;208:*.spx=00;38;5;208:*.xspf=00;38;5;208:*.mov=01;38;5;208:*.mpg=01;38;5;208:*.mpeg=01;38;5;208:*.3gp=01;38;5;208:*.m2v=01;38;5;208:*.mkv=01;38;5;208:*.ogm=01;38;5;208:*.mp4=01;38;5;208:*.m4v=01;38;5;208:*.mp4v=01;38;5;208:*.vob=01;38;5;208:*.qt=01;38;5;208:*.nuv=01;38;5;208:*.wmv=01;38;5;208:*.asf=01;38;5;208:*.rm=01;38;5;208:*.rmvb=01;38;5;208:*.flc=01;38;5;208:*.avi=01;38;5;208:*.fli=01;38;5;208:*.flv=01;38;5;208:*.gl=01;38;5;208:*.m2ts=01;38;5;208:*.divx=01;38;5;208:*.log=00;38;5;240:*.bak=00;38;5;240:*.aux=00;38;5;240:*.bbl=00;38;5;240:*.blg=00;38;5;240:*~=00;38;5;240:*#=00;38;5;240:*.part=00;38;5;240:*.incomplete=00;38;5;240:*.swp=00;38;5;240:*.tmp=00;38;5;240:*.temp=00;38;5;240:*.o=00;38;5;240:*.pyc=00;38;5;240:*.class=00;38;5;240:*.cache=00;38;5;240:';
 
@@ -182,7 +170,7 @@ export LS_COLORS
 #
 # vault
 #
-export VAULT_ADDR="https://altvault.altschool.com:8200"
+export VAULT_ADDR="https://altvault.dev-altschool.com:8200"
 
 #
 # oh-my-zsh
@@ -197,6 +185,54 @@ source $ZSH/oh-my-zsh.sh
 
 alias inspire='head -$((${RANDOM} % `wc -l < ~/.inspiration` + 1)) ~/.inspiration | tail -1'
 inspire
-fortune -o | cowthink -f eyes --aurora
+fortune | cowthink -f eyes --aurora
 
-export PATH="$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$HOME/go/bin:/usr/local/go/bin:$HOME/bin:$HOME/.local/bin:${PATH}"
+export ANDROID_HOME=$HOME/code/android-sdk
+export ANDROID_SDK_ROOT=$ANDROID_HOME
+export PATH="$ANDROID_SDK_ROOT/tools/bin:$ANDROID_HOME/platform-tools:$HOME/go/bin:/usr/local/go/bin:$HOME/bin:$HOME/.local/bin:${PATH}"
+
+eval "$(sh "$HOME/.eopen/init.sh")"
+
+#
+# starship
+#
+
+eval $(starship init zsh)
+
+#
+# exa
+#
+if type exa > /dev/null; then
+    alias ls=exa
+fi
+
+export $(dbus-launch)
+export LIBGL_ALWAYS_INDIRECT=1
+
+export WSL_HOST=$(tail -1 /etc/resolv.conf | cut -d' ' -f2)
+export DISPLAY=$WSL_HOST:0.0
+sudo /etc/init.d/dbus start &> /dev/null
+
+export ADB_SERVER_SOCKET=tcp:$WSL_HOST:5037
+
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
+function setup_conda() {
+    # >>> conda initialize >>>
+    # !! Contents within this block are managed by 'conda init' !!
+
+    __conda_setup="$('/home/ant/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+    if [ $? -eq 0 ]; then
+        eval "$__conda_setup"
+    else
+        if [ -f "/home/ant/miniconda3/etc/profile.d/conda.sh" ]; then
+            . "/home/ant/miniconda3/etc/profile.d/conda.sh"
+        else
+            export PATH="/home/ant/miniconda3/bin:$PATH"
+        fi
+    fi
+    unset __conda_setup
+    # <<< conda initialize <<<
+}
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"

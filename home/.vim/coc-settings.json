@@ -1,5 +1,5 @@
 {
-  "python.formatting.provider": "blackd",
+  "python.formatting.provider": "none",
   "coc.preferences.willSaveHandlerTimeout": 1000,
   "python.linting.enabled": true,
   "python.formatting.blackdHTTPHeaders": {
@@ -15,6 +15,7 @@
     "-typescript",
     "-css",
     "-python",
-    "-markdown"
+    "-markdown",
+    "-vue"
   ]
 }

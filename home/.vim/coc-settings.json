@@ -17,5 +17,6 @@
     "-python",
     "-markdown",
     "-vue"
-  ]
+  ],
+  "ruff.nativeServer": true
 }

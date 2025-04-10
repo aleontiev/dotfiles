@@ -33,7 +33,8 @@ Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'posva/vim-vue'
 Plug 'neoclide/coc.nvim'
-
+" Plug 'Exafunction/codeium.vim'
+" Plug 'folke/noice.nvim'
 
 call plug#end()
 filetype plugin indent on  " required
@@ -81,7 +82,10 @@ colorscheme molokai
 
 " Indentation
 
-set clipboard=exclude:.*
+if has('nvim')
+else
+    set clipboard=exclude:.*
+endif
 set backspace=2
 set noeol " no EOL at EOF
 set autoindent
@@ -130,8 +134,8 @@ nnoremap h i
 
 " Hotkeys
 
-let mapleader = ";"
-let g:mapleader = ";"
+let mapleader = "\\"
+let g:mapleader = "\\"
 
 nmap <leader>rn <Plug>(coc-rename)
 nmap <leader>f :call CocActionAsync('format')<cr>
@@ -198,3 +202,4 @@ endfunction
 
 syntax on
 
+highlight! Visual cterm=NONE ctermbg=17 ctermfg=NONE guibg=Grey40 " link Visual Search

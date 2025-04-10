@@ -1,13 +1,14 @@
-
 #
 # Inspiration
 #
+
 printf "Loading...\r"
 
 #
 # tmux
 #
 
+# alias vim="nvim"
 printf "...tmux\r"
 alias ted="vim ~/.tmux.conf"
 tmux new -s default 2>/dev/null
@@ -33,7 +34,7 @@ TIMEFMT='%J   %U  user %S system %P cpu %*E total'$'\n'\
 # poetry
 #
 printf "...poetry\r"
-source $HOME/.poetry/env
+# source $HOME/.poetry/env
 
 #
 # fasd
@@ -104,7 +105,7 @@ alias mate="v"
 
 printf "...nvm\r"
 
-export PATH="$HOME/.nvm/versions/node/v14.17.0/bin:$PATH"
+export PATH="$HOME/.nvm/versions/node/v18.20.3/bin:$PATH"
 export NVM_DIR=~/.nvm
 [[ -s "$NVM_DIR/nvm.sh" ]] && source "$NVM_DIR/nvm.sh" --no-use
 
@@ -184,8 +185,13 @@ ZSH_DISABLE_COMPFIX=true
 source $ZSH/oh-my-zsh.sh
 
 alias inspire='head -$((${RANDOM} % `wc -l < ~/.inspiration` + 1)) ~/.inspiration | tail -1'
-inspire
-fortune | cowthink -f eyes --aurora
+
+if [ "$ASCIINEMA_REC" = "1" ]; then
+    return
+else
+    inspire
+    fortune | cowthink -f eyes --aurora
+fi
 
 export ANDROID_HOME=$HOME/code/android-sdk
 export ANDROID_SDK_ROOT=$ANDROID_HOME
@@ -236,3 +242,55 @@ function setup_conda() {
     # <<< conda initialize <<<
 }
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+
+. "$HOME/.cargo/env"
+
+
+export PATH="/mnt/c/users/alone/AppData/Local/Programs/Microsoft VS Code/:$PATH"
+alias code=code.exe
+[[ "$TERM_PROGRAM" == "vscode" ]] && . "$(code.exe --locate-shell-integration-path zsh)"
+
+alias clip=/mnt/c/windows/System32/clip.exe
+
+catall() {
+  local filename # Use a local variable within the function
+
+  # Read filenames from standard input (stdin) line by line
+  # IFS= prevents stripping leading/trailing whitespace from filenames
+  # -r prevents backslash interpretation
+  while IFS= read -r filename; do
+    # Skip empty lines potentially present in the input
+    if [[ -z "$filename" ]]; then
+      continue
+    fi
+
+    # Check if the item exists and is a regular file
+    if [[ -f "$filename" ]]; then
+      # Check if the file is readable
+      if [[ -r "$filename" ]]; then
+        echo "### $filename" # Print a clear header with the filename
+        echo ""
+        cat -- "$filename"                  # Use -- to handle filenames starting with '-'
+                                            # Use "$filename" to handle spaces/special chars
+        echo # Add a blank line after the file content for better separation
+      else
+        # File exists but is not readable
+        # Output error messages to standard error (stderr)
+        echo "### $filename" >&2
+        echo "[catall: Error - Cannot read file '$filename']" >&2
+        echo >&2 # Add blank line to stderr output as well
+      fi
+    elif [[ -e "$filename" ]]; then
+       # Item exists but is not a regular file (e.g., a directory)
+       echo "### $filename" >&2
+       echo "[catall: Error - Not a regular file '$filename']" >&2
+       echo >&2 # Add blank line to stderr output as well
+    else
+       # File does not exist
+       # Optional: You could print a header like "---=== File Not Found: $filename ===---" >&2
+       echo "[catall: Error - File not found '$filename']" >&2
+       echo >&2 # Add blank line to stderr output as well
+    fi
+  done <&0 # Explicitly read from file descriptor 0 (stdin) - good practice in functions
+}
+
